@@ -5,6 +5,7 @@
 
 /* CSS Variables */
 :root {
+    background-color: #0a0a0a;
     --primary: #00ff88;
     --primary-dim: #00aa66;
     --secondary: #00ccff;
