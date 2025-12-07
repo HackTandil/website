@@ -22,9 +22,16 @@ function initDateTime() {
   function updateDateTime() {
     const now = new Date();
     const formatted = now
-      .toISOString()
-      .replace("T", " // ")
-      .substring(0, 21)
+      .toLocaleString("sv-SE", {
+        timeZone: "America/Argentina/Buenos_Aires",
+        year: "numeric",
+        month: "2-digit",
+        day: "2-digit",
+        hour: "2-digit",
+        minute: "2-digit",
+        second: "2-digit",
+      })
+      .replace(" ", " // ")
       .replace(/-/g, ".");
     datetimeEl.textContent = formatted;
   }
