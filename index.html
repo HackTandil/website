@@ -1,0 +1,380 @@
+<!doctype html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>HACKTANDIL // Programmers Meetup</title>
+        <link rel="preconnect" href="https://fonts.googleapis.com" />
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+        <link
+            href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;500;700;900&family=Share+Tech+Mono&display=swap"
+            rel="stylesheet"
+        />
+        <link rel="stylesheet" href="styles.css" />
+    </head>
+    <body>
+        <!-- Scanlines overlay -->
+        <div class="scanlines"></div>
+
+        <!-- Glitch overlay -->
+        <div class="glitch-overlay"></div>
+
+        <!-- Grid background -->
+        <div class="grid-bg"></div>
+
+        <!-- Floating particles -->
+        <div class="particles" id="particles"></div>
+
+        <!-- Main container -->
+        <div class="container">
+            <!-- Header HUD -->
+            <header class="hud-header">
+                <div class="hud-corner top-left"></div>
+                <div class="hud-corner top-right"></div>
+                <div class="status-bar">
+                    <span class="status-item blink">● SYSTEM ONLINE</span>
+                    <span class="status-item" id="datetime"></span>
+                    <span class="status-item"
+                        >LAT: -37.3217 | LON: -59.1328</span
+                    >
+                </div>
+            </header>
+
+            <!-- Hero Section -->
+            <section class="hero">
+                <div class="hero-frame">
+                    <div class="frame-corner tl"></div>
+                    <div class="frame-corner tr"></div>
+                    <div class="frame-corner bl"></div>
+                    <div class="frame-corner br"></div>
+
+                    <div class="hero-content">
+                        <div>
+                            <img
+                                src="public/logo.svg"
+                                alt="Hacktandil Logo"
+                                class="hero-logo"
+                            />
+                        </div>
+                        <div class="glitch-text" data-text="HACKTANDIL">
+                            HACKTANDIL
+                        </div>
+                        <div class="subtitle typewriter">
+                            <span class="bracket">[</span>
+                            <span id="typed-text"></span>
+                            <span class="cursor">_</span>
+                            <span class="bracket">]</span>
+                        </div>
+                        <p class="tagline">// CONNECT • CODE • CREATE</p>
+
+                        <div class="hero-stats">
+                            <div class="stat-box">
+                                <span class="stat-value" data-target="150"
+                                    >0</span
+                                >
+                                <span class="stat-label">DEVS</span>
+                            </div>
+                            <div class="stat-divider"></div>
+                            <div class="stat-box">
+                                <span class="stat-value" data-target="24"
+                                    >0</span
+                                >
+                                <span class="stat-label">EVENTS</span>
+                            </div>
+                            <div class="stat-divider"></div>
+                            <div class="stat-box">
+                                <span class="stat-value" data-target="8"
+                                    >0</span
+                                >
+                                <span class="stat-label">YEARS</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Events Calendar Section -->
+            <section class="events-calendar">
+                <div class="section-header">
+                    <span class="section-tag">&lt;EVENTS&gt;</span>
+                    <div class="section-line"></div>
+                </div>
+
+                <div class="calendar-container">
+                    <div class="calendar-frame">
+                        <div class="frame-corner tl"></div>
+                        <div class="frame-corner tr"></div>
+                        <div class="frame-corner bl"></div>
+                        <div class="frame-corner br"></div>
+                        <div class="calendar-header">
+                            <span class="calendar-status"
+                                >◈ LIVE DATA FEED</span
+                            >
+                            <span class="calendar-label"
+                                >// UPCOMING EVENTS</span
+                            >
+                        </div>
+                        <div class="calendar-embed">
+                            <iframe
+                                src="https://lu.ma/embed/calendar/cal-NrV1d639z7PDeXT/events"
+                                width="100%"
+                                height="450"
+                                frameborder="0"
+                                allowfullscreen=""
+                                aria-hidden="false"
+                                tabindex="0"
+                            ></iframe>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="section-footer">
+                    <span class="section-tag">&lt;/EVENTS&gt;</span>
+                </div>
+            </section>
+
+            <!-- About Section -->
+            <section class="about">
+                <div class="section-header">
+                    <span class="section-tag">&lt;ABOUT&gt;</span>
+                    <div class="section-line"></div>
+                </div>
+
+                <div class="about-grid">
+                    <div class="about-card">
+                        <div class="card-icon">
+                            <svg viewBox="0 0 100 100" class="wireframe-icon">
+                                <polygon
+                                    points="50,10 90,30 90,70 50,90 10,70 10,30"
+                                    fill="none"
+                                    stroke="currentColor"
+                                    stroke-width="2"
+                                />
+                                <line
+                                    x1="50"
+                                    y1="10"
+                                    x2="50"
+                                    y2="90"
+                                    stroke="currentColor"
+                                    stroke-width="1"
+                                />
+                                <line
+                                    x1="10"
+                                    y1="30"
+                                    x2="90"
+                                    y2="70"
+                                    stroke="currentColor"
+                                    stroke-width="1"
+                                />
+                                <line
+                                    x1="90"
+                                    y1="30"
+                                    x2="10"
+                                    y2="70"
+                                    stroke="currentColor"
+                                    stroke-width="1"
+                                />
+                            </svg>
+                        </div>
+                        <h3 class="card-title">NETWORKING</h3>
+                        <p class="card-desc">
+                            Connect with local developers, share experiences,
+                            and build lasting professional relationships in the
+                            tech community.
+                        </p>
+                    </div>
+
+                    <div class="about-card">
+                        <div class="card-icon">
+                            <svg viewBox="0 0 100 100" class="wireframe-icon">
+                                <rect
+                                    x="10"
+                                    y="20"
+                                    width="80"
+                                    height="60"
+                                    fill="none"
+                                    stroke="currentColor"
+                                    stroke-width="2"
+                                />
+                                <line
+                                    x1="10"
+                                    y1="35"
+                                    x2="90"
+                                    y2="35"
+                                    stroke="currentColor"
+                                    stroke-width="1"
+                                />
+                                <circle
+                                    cx="20"
+                                    cy="27"
+                                    r="3"
+                                    fill="currentColor"
+                                />
+                                <circle
+                                    cx="30"
+                                    cy="27"
+                                    r="3"
+                                    fill="currentColor"
+                                />
+                                <circle
+                                    cx="40"
+                                    cy="27"
+                                    r="3"
+                                    fill="currentColor"
+                                />
+                                <text
+                                    x="20"
+                                    y="55"
+                                    font-family="monospace"
+                                    font-size="8"
+                                    fill="currentColor"
+                                >
+                                    &gt;_
+                                </text>
+                            </svg>
+                        </div>
+                        <h3 class="card-title">KNOWLEDGE</h3>
+                        <p class="card-desc">
+                            Learn from talks, workshops, and hands-on sessions
+                            covering cutting-edge technologies and best
+                            practices.
+                        </p>
+                    </div>
+
+                    <div class="about-card">
+                        <div class="card-icon">
+                            <svg viewBox="0 0 100 100" class="wireframe-icon">
+                                <circle
+                                    cx="50"
+                                    cy="50"
+                                    r="35"
+                                    fill="none"
+                                    stroke="currentColor"
+                                    stroke-width="2"
+                                />
+                                <circle
+                                    cx="50"
+                                    cy="50"
+                                    r="20"
+                                    fill="none"
+                                    stroke="currentColor"
+                                    stroke-width="1"
+                                />
+                                <circle
+                                    cx="50"
+                                    cy="50"
+                                    r="5"
+                                    fill="currentColor"
+                                />
+                                <line
+                                    x1="50"
+                                    y1="15"
+                                    x2="50"
+                                    y2="25"
+                                    stroke="currentColor"
+                                    stroke-width="2"
+                                />
+                                <line
+                                    x1="50"
+                                    y1="75"
+                                    x2="50"
+                                    y2="85"
+                                    stroke="currentColor"
+                                    stroke-width="2"
+                                />
+                                <line
+                                    x1="15"
+                                    y1="50"
+                                    x2="25"
+                                    y2="50"
+                                    stroke="currentColor"
+                                    stroke-width="2"
+                                />
+                                <line
+                                    x1="75"
+                                    y1="50"
+                                    x2="85"
+                                    y2="50"
+                                    stroke="currentColor"
+                                    stroke-width="2"
+                                />
+                            </svg>
+                        </div>
+                        <h3 class="card-title">COMMUNITY</h3>
+                        <p class="card-desc">
+                            Be part of Tandil's growing tech ecosystem. From
+                            students to senior developers, everyone has a place
+                            here.
+                        </p>
+                    </div>
+                </div>
+
+                <div class="section-footer">
+                    <span class="section-tag">&lt;/ABOUT&gt;</span>
+                </div>
+            </section>
+
+            <!-- Contact Section -->
+            <section class="contact">
+                <div class="section-header">
+                    <span class="section-tag">&lt;CONNECT&gt;</span>
+                    <div class="section-line"></div>
+                </div>
+
+                <div class="contact-grid">
+                    <a href="#" class="contact-link">
+                        <span class="contact-icon">[GH]</span>
+                        <span class="contact-text">GITHUB</span>
+                    </a>
+                    <a href="#" class="contact-link">
+                        <span class="contact-icon">[TW]</span>
+                        <span class="contact-text">TWITTER</span>
+                    </a>
+                    <a href="#" class="contact-link">
+                        <span class="contact-icon">[DC]</span>
+                        <span class="contact-text">DISCORD</span>
+                    </a>
+                    <a href="#" class="contact-link">
+                        <span class="contact-icon">[LI]</span>
+                        <span class="contact-text">LINKEDIN</span>
+                    </a>
+                </div>
+
+                <div class="newsletter">
+                    <p class="newsletter-label">// SUBSCRIBE TO DATA STREAM</p>
+                    <form class="newsletter-form" id="newsletter-form">
+                        <input
+                            type="email"
+                            placeholder="ENTER_EMAIL@DOMAIN.COM"
+                            class="newsletter-input"
+                            required
+                        />
+                        <button type="submit" class="newsletter-btn">
+                            TRANSMIT
+                        </button>
+                    </form>
+                </div>
+
+                <div class="section-footer">
+                    <span class="section-tag">&lt;/CONNECT&gt;</span>
+                </div>
+            </section>
+
+            <!-- Footer -->
+            <footer class="hud-footer">
+                <div class="footer-content">
+                    <span class="footer-text"
+                        >© 2025 HACKTANDIL // ALL SYSTEMS NOMINAL</span
+                    >
+                    <span class="footer-coords"
+                        >TANDIL, BUENOS AIRES, ARGENTINA</span
+                    >
+                </div>
+                <div class="hud-corner bottom-left"></div>
+                <div class="hud-corner bottom-right"></div>
+            </footer>
+        </div>
+
+        <script src="script.js"></script>
+    </body>
+</html>
