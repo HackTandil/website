@@ -1,6 +1,10 @@
 {
   "private": true,
-  "dependencies": {
-    "@vercel/edge": "^0.1.2"
+  "scripts": {
+    "dev": "vercel dev",
+    "deploy": "vercel"
+  },
+  "engines": {
+    "node": ">=18"
   }
 }
