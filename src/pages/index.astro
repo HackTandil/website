@@ -1,0 +1,510 @@
+---
+import Layout from '../layouts/Layout.astro';
+---
+
+<Layout>
+  <!-- Scanlines overlay -->
+  <div class="scanlines"></div>
+
+  <!-- Glitch overlay -->
+  <div class="glitch-overlay"></div>
+
+  <!-- Grid background -->
+  <div class="grid-bg"></div>
+
+  <!-- Floating particles -->
+  <div class="particles" id="particles"></div>
+
+  <!-- Main container -->
+  <div class="container">
+    <!-- Header HUD -->
+    <header class="hud-header">
+      <div class="hud-corner top-left"></div>
+      <div class="hud-corner top-right"></div>
+      <div class="status-bar">
+        <span class="status-item blink">● ONLINE</span>
+        <span class="status-item" id="datetime"></span>
+        <span class="status-item">LAT: -37.3217 | LON: -59.1328</span>
+      </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="hero">
+      <div class="hero-frame">
+        <div class="frame-corner tl"></div>
+        <div class="frame-corner tr"></div>
+        <div class="frame-corner bl"></div>
+        <div class="frame-corner br"></div>
+
+        <div class="hero-content">
+          <div>
+            <img src="/logo.svg" alt="Hacktandil Logo" class="hero-logo" />
+          </div>
+          <div class="glitch-text" data-text="HACKTANDIL">HACKTANDIL</div>
+          <div class="subtitle typewriter">
+            <span class="bracket">[</span>
+            <span id="typed-text"></span>
+            <span class="cursor">_</span>
+            <span class="bracket">]</span>
+          </div>
+          <p class="tagline">// CONECTAR • PENSAR • CREAR</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- Events Calendar Section -->
+    <section class="events-calendar">
+      <div class="section-header">
+        <span class="section-tag">&lt;EVENTOS&gt;</span>
+        <div class="section-line"></div>
+      </div>
+
+      <div class="calendar-container">
+        <div class="calendar-frame">
+          <div class="frame-corner tl"></div>
+          <div class="frame-corner tr"></div>
+          <div class="frame-corner bl"></div>
+          <div class="frame-corner br"></div>
+          <div class="calendar-header">
+            <span class="calendar-status">◈ LIVE DATA</span>
+            <span class="calendar-label">// PRÓXIMOS EVENTOS</span>
+          </div>
+          <div class="calendar-embed">
+            <iframe
+              src="https://lu.ma/embed/calendar/cal-NrV1d639z7PDeXT/events"
+              width="100%"
+              height="450"
+              frameborder="0"
+              allowfullscreen=""
+              aria-hidden="false"
+              tabindex="0"></iframe>
+          </div>
+        </div>
+      </div>
+
+      <div class="section-footer">
+        <span class="section-tag">&lt;/EVENTOS&gt;</span>
+      </div>
+    </section>
+
+    <!-- About Section -->
+    <section class="about">
+      <div class="section-header">
+        <span class="section-tag">&lt;NOSOTROS&gt;</span>
+        <div class="section-line"></div>
+      </div>
+
+      <div class="about-grid">
+        <div class="about-card">
+          <div class="card-icon">
+            <svg viewBox="0 0 100 100" class="wireframe-icon">
+              <polygon
+                points="50,10 90,30 90,70 50,90 10,70 10,30"
+                fill="none"
+                stroke="currentColor"
+                stroke-width="2"></polygon>
+              <line x1="50" y1="10" x2="50" y2="90" stroke="currentColor" stroke-width="1"></line>
+              <line x1="10" y1="30" x2="90" y2="70" stroke="currentColor" stroke-width="1"></line>
+              <line x1="90" y1="30" x2="10" y2="70" stroke="currentColor" stroke-width="1"></line>
+            </svg>
+          </div>
+          <h3 class="card-title">NETWORKING</h3>
+          <p class="card-desc">
+            Conectá con builders locales, compartí experiencias y construí relaciones profesionales
+            duraderas en la comunidad tech.
+          </p>
+        </div>
+
+        <div class="about-card">
+          <div class="card-icon">
+            <svg viewBox="0 0 100 100" class="wireframe-icon">
+              <rect
+                x="10"
+                y="20"
+                width="80"
+                height="60"
+                fill="none"
+                stroke="currentColor"
+                stroke-width="2"></rect>
+              <line x1="10" y1="35" x2="90" y2="35" stroke="currentColor" stroke-width="1"></line>
+              <circle cx="20" cy="27" r="3" fill="currentColor"></circle>
+              <circle cx="30" cy="27" r="3" fill="currentColor"></circle>
+              <circle cx="40" cy="27" r="3" fill="currentColor"></circle>
+              <text x="20" y="55" font-family="monospace" font-size="8" fill="currentColor"
+                >&gt;_</text
+              >
+            </svg>
+          </div>
+          <h3 class="card-title">CONOCIMIENTO</h3>
+          <p class="card-desc">
+            Aprendé de charlas, talleres y sesiones prácticas sobre tecnologías de vanguardia y
+            mejores prácticas.
+          </p>
+        </div>
+
+        <div class="about-card">
+          <div class="card-icon">
+            <svg viewBox="0 0 100 100" class="wireframe-icon">
+              <circle cx="50" cy="50" r="35" fill="none" stroke="currentColor" stroke-width="2"
+              ></circle>
+              <circle cx="50" cy="50" r="20" fill="none" stroke="currentColor" stroke-width="1"
+              ></circle>
+              <circle cx="50" cy="50" r="5" fill="currentColor"></circle>
+              <line x1="50" y1="15" x2="50" y2="25" stroke="currentColor" stroke-width="2"></line>
+              <line x1="50" y1="75" x2="50" y2="85" stroke="currentColor" stroke-width="2"></line>
+              <line x1="15" y1="50" x2="25" y2="50" stroke="currentColor" stroke-width="2"></line>
+              <line x1="75" y1="50" x2="85" y2="50" stroke="currentColor" stroke-width="2"></line>
+            </svg>
+          </div>
+          <h3 class="card-title">COMUNIDAD</h3>
+          <p class="card-desc">
+            Sé parte del ecosistema tech en crecimiento de Tandil. Desde estudiantes hasta
+            desarrolladores senior, todos tienen un lugar acá.
+          </p>
+        </div>
+      </div>
+
+      <div class="section-footer">
+        <span class="section-tag">&lt;/NOSOTROS&gt;</span>
+      </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section class="contact">
+      <div class="section-header">
+        <span class="section-tag">&lt;CONECTAR&gt;</span>
+        <div class="section-line"></div>
+      </div>
+
+      <div class="contact-grid">
+        <a href="https://github.com/hacktandil" class="contact-link" target="_blank">
+          <span class="contact-icon">[GH]</span>
+          <span class="contact-text">GITHUB</span>
+        </a>
+        <a href="https://x.com/hacktandil" target="_blank" class="contact-link">
+          <span class="contact-icon">[X]</span>
+          <span class="contact-text">X</span>
+        </a>
+        <a href="https://lu.ma/hacktandil" target="_blank" class="contact-link">
+          <span class="contact-icon">[LU]</span>
+          <span class="contact-text">LUMA</span>
+        </a>
+      </div>
+
+      <div class="section-footer">
+        <span class="section-tag">&lt;/CONECTAR&gt;</span>
+      </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="hud-footer">
+      <div class="footer-content">
+        <span class="footer-text">© 2025 HACKTANDIL // TODOS LOS DERECHOS RESERVADOS</span>
+        <span class="footer-coords">TANDIL, BUENOS AIRES, ARGENTINA</span>
+      </div>
+      <div class="hud-corner bottom-left"></div>
+      <div class="hud-corner bottom-right"></div>
+    </footer>
+  </div>
+
+  <script>
+    /* ========================================
+       HACKTANDIL - Interactive Elements
+       Cyberpunk Landing Page Scripts
+       ======================================== */
+
+    // Initialize on DOM load
+    document.addEventListener('DOMContentLoaded', () => {
+      initDateTime();
+      initTypewriter();
+      initParticles();
+      initCounters();
+      initGlitchEffects();
+      initFormHandlers();
+    });
+
+    // ========================================
+    // Date & Time Display
+    // ========================================
+    function initDateTime() {
+      const datetimeEl = document.getElementById('datetime');
+      if (!datetimeEl) return;
+
+      function updateDateTime() {
+        const now = new Date();
+        const formatted = now
+          .toLocaleString('sv-SE', {
+            timeZone: 'America/Argentina/Buenos_Aires',
+            year: 'numeric',
+            month: '2-digit',
+            day: '2-digit',
+            hour: '2-digit',
+            minute: '2-digit',
+            second: '2-digit',
+          })
+          .replace(' ', ' // ')
+          .replace(/-/g, '.');
+        datetimeEl.textContent = formatted;
+      }
+
+      updateDateTime();
+      setInterval(updateDateTime, 1000);
+    }
+
+    // ========================================
+    // Typewriter Effect
+    // ========================================
+    function initTypewriter() {
+      const typedTextEl = document.getElementById('typed-text');
+      if (!typedTextEl) return;
+
+      const phrases = [
+        'ENCUENTRO DE BUILDERS',
+        'COMUNIDAD TECH DE TANDIL',
+        'CODEAR • PENSAR • CREAR',
+        'ESTUDIANTES, TRABAJADORES, BUILDERS',
+        'COMPARTIR CONOCIMIENTO',
+      ];
+
+      let phraseIndex = 0;
+      let charIndex = 0;
+      let isDeleting = false;
+      let typingSpeed = 100;
+
+      function type() {
+        const currentPhrase = phrases[phraseIndex];
+
+        if (isDeleting) {
+          typedTextEl.textContent = currentPhrase.substring(0, charIndex - 1);
+          charIndex--;
+          typingSpeed = 50;
+        } else {
+          typedTextEl.textContent = currentPhrase.substring(0, charIndex + 1);
+          charIndex++;
+          typingSpeed = 100;
+        }
+
+        if (!isDeleting && charIndex === currentPhrase.length) {
+          isDeleting = true;
+          typingSpeed = 2000; // Pause at end
+        } else if (isDeleting && charIndex === 0) {
+          isDeleting = false;
+          phraseIndex = (phraseIndex + 1) % phrases.length;
+          typingSpeed = 500; // Pause before new phrase
+        }
+
+        setTimeout(type, typingSpeed);
+      }
+
+      type();
+    }
+
+    // ========================================
+    // Floating Particles
+    // ========================================
+    function initParticles() {
+      const particlesContainer = document.getElementById('particles');
+      if (!particlesContainer) return;
+
+      const particleCount = 25;
+
+      for (let i = 0; i < particleCount; i++) {
+        createParticle(particlesContainer, i);
+      }
+    }
+
+    function createParticle(container: HTMLElement, index: number) {
+      const particle = document.createElement('div');
+      particle.className = 'particle';
+
+      const startX = Math.random() * 100;
+      const size = Math.random() * 2 + 1;
+      const duration = Math.random() * 15 + 15;
+      const delay = Math.random() * 20;
+
+      particle.style.cssText = `
+        left: ${startX}%;
+        width: ${size}px;
+        height: ${size}px;
+        background: rgba(0, 255, 136, 0.6);
+        animation-duration: ${duration}s;
+        animation-delay: -${delay}s;
+        opacity: ${Math.random() * 0.3 + 0.1};
+      `;
+
+      container.appendChild(particle);
+    }
+
+    // ========================================
+    // Animated Counters
+    // ========================================
+    function initCounters() {
+      const counters = document.querySelectorAll('.stat-value');
+      const observerOptions = {
+        threshold: 0.5,
+        rootMargin: '0px',
+      };
+
+      const observer = new IntersectionObserver((entries) => {
+        entries.forEach((entry) => {
+          if (entry.isIntersecting) {
+            animateCounter(entry.target as HTMLElement);
+            observer.unobserve(entry.target);
+          }
+        });
+      }, observerOptions);
+
+      counters.forEach((counter) => observer.observe(counter));
+    }
+
+    function animateCounter(element: HTMLElement) {
+      const target = parseInt(element.dataset.target || '0');
+      const duration = 2000;
+      const increment = target / (duration / 16);
+      let current = 0;
+
+      const timer = setInterval(() => {
+        current += increment;
+        if (current >= target) {
+          element.textContent = target + '+';
+          clearInterval(timer);
+        } else {
+          element.textContent = Math.floor(current).toString();
+        }
+      }, 16);
+    }
+
+    // ========================================
+    // Glitch Effects (subtle)
+    // ========================================
+    function initGlitchEffects() {
+      // Minimal - no constant animations
+    }
+
+    // ========================================
+    // Form Handlers
+    // ========================================
+    function initFormHandlers() {
+      const newsletterForm = document.getElementById('newsletter-form');
+      if (newsletterForm) {
+        newsletterForm.addEventListener('submit', handleNewsletter);
+      }
+    }
+
+    function handleNewsletter(e: Event) {
+      e.preventDefault();
+
+      const form = e.target as HTMLFormElement;
+      const input = form.querySelector('.newsletter-input') as HTMLInputElement;
+      const btn = form.querySelector('.newsletter-btn') as HTMLButtonElement;
+      const email = input.value;
+
+      const originalText = btn.textContent;
+      btn.textContent = 'TRANSMITIENDO...';
+      btn.style.pointerEvents = 'none';
+
+      setTimeout(() => {
+        btn.textContent = 'SEÑAL RECIBIDA';
+        btn.style.background = '#00ff00';
+        btn.style.borderColor = '#00ff00';
+
+        setTimeout(() => {
+          alert(
+            `📡 ¡Transmisión recibida!\n\nEmail: ${email}\n\nRecibirás actualizaciones en esta dirección.`
+          );
+          input.value = '';
+          btn.textContent = originalText;
+          btn.style.pointerEvents = 'auto';
+          btn.style.background = '';
+          btn.style.borderColor = '';
+        }, 1000);
+      }, 1500);
+    }
+
+    // ========================================
+    // Smooth Scroll for Anchor Links
+    // ========================================
+    document.querySelectorAll('a[href^="#"]').forEach((anchor) => {
+      anchor.addEventListener('click', function (e) {
+        e.preventDefault();
+        const href = (e.currentTarget as HTMLAnchorElement).getAttribute('href');
+        if (href) {
+          const target = document.querySelector(href);
+          if (target) {
+            target.scrollIntoView({
+              behavior: 'smooth',
+              block: 'start',
+            });
+          }
+        }
+      });
+    });
+
+    // ========================================
+    // Keyboard Easter Egg
+    // ========================================
+    let konamiCode: string[] = [];
+    const konamiSequence = [
+      'ArrowUp',
+      'ArrowUp',
+      'ArrowDown',
+      'ArrowDown',
+      'ArrowLeft',
+      'ArrowRight',
+      'ArrowLeft',
+      'ArrowRight',
+      'b',
+      'a',
+    ];
+
+    document.addEventListener('keydown', (e) => {
+      konamiCode.push(e.key);
+      konamiCode = konamiCode.slice(-10);
+
+      if (konamiCode.join('') === konamiSequence.join('')) {
+        activateEasterEgg();
+      }
+    });
+
+    function activateEasterEgg() {
+      document.body.style.animation = 'rainbow-bg 2s linear infinite';
+
+      const style = document.createElement('style');
+      style.textContent = `
+        @keyframes rainbow-bg {
+          0% { filter: hue-rotate(0deg); }
+          100% { filter: hue-rotate(360deg); }
+        }
+      `;
+      document.head.appendChild(style);
+
+      setTimeout(() => {
+        document.body.style.animation = '';
+        style.remove();
+      }, 5000);
+
+      console.log(
+        '%c🎮 ¡CÓDIGO KONAMI ACTIVADO!',
+        'font-size: 24px; color: #00ffff; text-shadow: 0 0 10px #00ffff;'
+      );
+    }
+
+    // ========================================
+    // Console Welcome Message
+    // ========================================
+    console.log(
+      `
+%c╔══════════════════════════════════════════╗
+║                                          ║
+║   █░█ ▄▀█ █▀▀ █▄▀ ▀█▀ ▄▀█ █▄░█ █▀▄ █ █░░  ║
+║   █▀█ █▀█ █▄▄ █░█ ░█░ █▀█ █░▀█ █▄▀ █ █▄▄  ║
+║                                          ║
+║   ¡Bienvenido/a, programador/a!          ║
+║   ¿Querés contribuir? Encontranos en GitHub║
+║                                          ║
+╚══════════════════════════════════════════╝
+`,
+      'color: #00ffff; font-family: monospace;'
+    );
+  </script>
+</Layout>
