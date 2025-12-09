@@ -6,5 +6,5 @@ import vercel from '@astrojs/vercel';
 export default defineConfig({
   output: 'static',
   adapter: vercel(),
-  site: 'https://hacktandil.com',
+  site: 'https://hacktandil.org',
 });
