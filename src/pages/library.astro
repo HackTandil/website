@@ -1,0 +1,384 @@
+---
+import Layout from '../layouts/Layout.astro';
+import libraryData from '../data/library.json';
+
+interface Book {
+  title: string;
+  author: string;
+  cover: string;
+  goodreads: string;
+  recommendedBy: string;
+}
+
+const books: Book[] = libraryData;
+---
+
+<Layout title="Biblioteca | HACKTANDIL" description="Biblioteca de la comunidad tech de Tandil. Libros recomendados de programación, arquitectura de software y desarrollo.">
+  <!-- Scanlines overlay -->
+  <div class="scanlines"></div>
+
+  <!-- Grid background -->
+  <div class="grid-bg"></div>
+
+  <!-- Main container -->
+  <div class="container">
+    <!-- Header HUD -->
+    <header class="hud-header">
+      <div class="hud-corner top-left"></div>
+      <div class="hud-corner top-right"></div>
+      <div class="status-bar">
+        <a href="/" class="nav-link">← INICIO</a>
+        <span class="status-item">BIBLIOTECA HACKTANDIL</span>
+        <span class="status-item">{books.length} LIBROS</span>
+      </div>
+    </header>
+
+    <!-- Library Section -->
+    <section class="library">
+      <div class="section-header">
+        <span class="section-tag">&lt;BIBLIOTECA&gt;</span>
+        <div class="section-line"></div>
+      </div>
+
+      <div class="library-intro">
+        <p>// Libros recomendados por la comunidad</p>
+      </div>
+
+      <div class="bookshelf">
+        {books.map((book) => (
+          <a 
+            href={book.goodreads} 
+            target="_blank" 
+            rel="noopener noreferrer"
+            class="book-container"
+          >
+            <div class="book">
+              <div class="book-spine"></div>
+              <div class="book-cover">
+                <img src={book.cover} alt={book.title} loading="lazy" />
+              </div>
+              <div class="book-pages"></div>
+            </div>
+            <div class="book-info">
+              <h3 class="book-title">{book.title}</h3>
+              <p class="book-author">{book.author}</p>
+              <span class="book-recommended">Recomendado por {book.recommendedBy}</span>
+            </div>
+          </a>
+        ))}
+      </div>
+
+      <div class="section-footer">
+        <span class="section-tag">&lt;/BIBLIOTECA&gt;</span>
+      </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="hud-footer">
+      <div class="footer-content">
+        <span class="footer-text">© 2025 HACKTANDIL // TODOS LOS DERECHOS RESERVADOS</span>
+        <span class="footer-coords">TANDIL, BUENOS AIRES, ARGENTINA</span>
+      </div>
+      <div class="hud-corner bottom-left"></div>
+      <div class="hud-corner bottom-right"></div>
+    </footer>
+  </div>
+</Layout>
+
+<style>
+  /* Navigation link */
+  .nav-link {
+    color: var(--primary);
+    text-decoration: none;
+    font-size: 0.75rem;
+    letter-spacing: 2px;
+    transition: all 0.3s ease;
+  }
+
+  .nav-link:hover {
+    color: var(--secondary);
+    text-shadow: 0 0 10px var(--secondary);
+  }
+
+  /* Library intro */
+  .library-intro {
+    text-align: center;
+    margin-bottom: 60px;
+  }
+
+  .library-intro p {
+    font-size: 1rem;
+    color: var(--text-secondary);
+    letter-spacing: 2px;
+  }
+
+  /* Bookshelf */
+  .bookshelf {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+    gap: 60px 40px;
+    padding: 40px 0;
+  }
+
+  /* Book container */
+  .book-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 20px;
+    text-decoration: none;
+    color: inherit;
+  }
+
+  .book-container:hover .book-title {
+    color: var(--primary);
+  }
+
+  /* 3D Book Effect */
+  .book {
+    position: relative;
+    width: 160px;
+    height: 220px;
+    transform-style: preserve-3d;
+    transform: perspective(1000px) rotateY(-25deg);
+    transition: transform 0.5s ease;
+    cursor: pointer;
+  }
+
+  .book:hover {
+    transform: perspective(1000px) rotateY(-5deg) translateY(-10px);
+  }
+
+  /* Book cover (front) */
+  .book-cover {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    transform-style: preserve-3d;
+    transform: translateZ(15px);
+    background: linear-gradient(135deg, #1a1a2e 0%, #16213e 100%);
+    border-radius: 0 3px 3px 0;
+    overflow: hidden;
+    box-shadow: 
+      5px 5px 20px rgba(0, 0, 0, 0.5),
+      0 0 30px rgba(0, 255, 136, 0.1);
+  }
+
+  .book-cover::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(
+      90deg,
+      rgba(255, 255, 255, 0.1) 0%,
+      transparent 5%,
+      transparent 95%,
+      rgba(0, 0, 0, 0.2) 100%
+    );
+    z-index: 2;
+    pointer-events: none;
+  }
+
+  .book-cover img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+  }
+
+  /* Book spine (left side) */
+  .book-spine {
+    position: absolute;
+    width: 30px;
+    height: 100%;
+    left: 0;
+    transform-style: preserve-3d;
+    transform: rotateY(-90deg) translateX(-15px);
+    background: linear-gradient(
+      90deg,
+      #0d1117 0%,
+      #1a1a2e 50%,
+      #0d1117 100%
+    );
+    border-radius: 3px 0 0 3px;
+    box-shadow: inset 0 0 10px rgba(0, 0, 0, 0.5);
+  }
+
+  .book-spine::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(
+      0deg,
+      rgba(0, 255, 136, 0.05) 0%,
+      rgba(0, 255, 136, 0.15) 50%,
+      rgba(0, 255, 136, 0.05) 100%
+    );
+  }
+
+  .book-spine::after {
+    content: '';
+    position: absolute;
+    top: 10%;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 2px;
+    height: 80%;
+    background: linear-gradient(
+      0deg,
+      transparent 0%,
+      var(--primary) 50%,
+      transparent 100%
+    );
+    opacity: 0.5;
+  }
+
+  /* Book pages (right edge) */
+  .book-pages {
+    position: absolute;
+    width: 30px;
+    height: calc(100% - 6px);
+    top: 3px;
+    right: 0;
+    transform-style: preserve-3d;
+    transform: rotateY(90deg) translateX(15px) translateZ(-160px);
+    background: repeating-linear-gradient(
+      90deg,
+      #f5f5f5 0px,
+      #e8e8e8 1px,
+      #f0f0f0 2px
+    );
+    border-radius: 0 2px 2px 0;
+    box-shadow: 
+      inset 0 0 5px rgba(0, 0, 0, 0.1),
+      2px 0 5px rgba(0, 0, 0, 0.2);
+  }
+
+  .book-pages::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(
+      90deg,
+      rgba(0, 0, 0, 0.15) 0%,
+      transparent 30%,
+      transparent 70%,
+      rgba(0, 0, 0, 0.1) 100%
+    );
+  }
+
+  /* Book shadow on hover */
+  .book::after {
+    content: '';
+    position: absolute;
+    bottom: -20px;
+    left: 10%;
+    width: 80%;
+    height: 20px;
+    background: radial-gradient(
+      ellipse at center,
+      rgba(0, 0, 0, 0.4) 0%,
+      transparent 70%
+    );
+    transform: rotateX(90deg);
+    transition: all 0.5s ease;
+  }
+
+  .book:hover::after {
+    bottom: -30px;
+    opacity: 0.6;
+  }
+
+  /* Glow effect on hover */
+  .book:hover .book-cover {
+    box-shadow: 
+      5px 5px 30px rgba(0, 0, 0, 0.6),
+      0 0 40px rgba(0, 255, 136, 0.2),
+      0 0 60px rgba(0, 255, 136, 0.1);
+  }
+
+  /* Book info */
+  .book-info {
+    text-align: center;
+    max-width: 180px;
+  }
+
+  .book-title {
+    font-family: var(--font-display);
+    font-size: 0.85rem;
+    font-weight: 600;
+    color: var(--text-primary);
+    letter-spacing: 1px;
+    margin-bottom: 8px;
+    line-height: 1.4;
+  }
+
+  .book-author {
+    font-size: 0.75rem;
+    color: var(--primary);
+    margin-bottom: 6px;
+  }
+
+  .book-recommended {
+    font-size: 0.65rem;
+    color: var(--text-dim);
+    letter-spacing: 1px;
+    font-style: italic;
+  }
+
+  /* Responsive */
+  @media (max-width: 768px) {
+    .bookshelf {
+      grid-template-columns: repeat(auto-fill, minmax(160px, 1fr));
+      gap: 50px 30px;
+    }
+
+    .book {
+      width: 140px;
+      height: 190px;
+    }
+
+    .book-cover {
+      transform: translateZ(12px);
+    }
+
+    .book-spine {
+      width: 24px;
+      transform: rotateY(-90deg) translateX(-12px);
+    }
+
+    .book-pages {
+      width: 24px;
+      transform: rotateY(90deg) translateX(12px) translateZ(-140px);
+    }
+  }
+
+  @media (max-width: 480px) {
+    .bookshelf {
+      grid-template-columns: repeat(2, 1fr);
+      gap: 40px 20px;
+    }
+
+    .book {
+      width: 120px;
+      height: 165px;
+    }
+
+    .book-title {
+      font-size: 0.75rem;
+    }
+
+    .book-author {
+      font-size: 0.7rem;
+    }
+  }
+</style>
