@@ -18,7 +18,8 @@
   "author": "Nombre del Autor",
   "cover": "URL de la imagen de portada",
   "goodreads": "URL de Goodreads",
-  "recommendedBy": "@tu_usuario"
+  "recommendedBy": "@tu_usuario",
+  "category": "Categoría del libro"
 }
 ```
 
@@ -29,6 +30,7 @@
 - **cover**: Podés obtener la URL de la imagen desde Goodreads o Amazon. Click derecho en la portada → "Copiar dirección de imagen"
 - **goodreads**: La URL de la página del libro en [goodreads.com](https://www.goodreads.com)
 - **recommendedBy**: Tu usuario de X/Twitter o GitHub (ej: `@tunombre`)
+- **category**: El género o tipo de libro. Categorías existentes: `Técnico`, `Ficción`, `Filosofía`. Podés usar una existente o proponer una nueva
 
 ### Ejemplo
 
@@ -38,7 +40,8 @@
   "author": "Chip Huyen",
   "cover": "https://m.media-amazon.com/images/S/compressed.photo.goodreads.com/books/1733340973i/216848047.jpg",
   "goodreads": "https://www.goodreads.com/book/show/216848047-ai-engineering",
-  "recommendedBy": "@tadeodonegana"
+  "recommendedBy": "@tadeodonegana",
+  "category": "Técnico"
 }
 ```
 

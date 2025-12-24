@@ -8,9 +8,23 @@ interface Book {
     cover: string;
     goodreads: string;
     recommendedBy: string;
+    category: string;
 }
 
 const books: Book[] = libraryData;
+
+// Group books by category
+const booksByCategory = books.reduce((acc, book) => {
+    const category = book.category;
+    if (!acc[category]) {
+        acc[category] = [];
+    }
+    acc[category].push(book);
+    return acc;
+}, {} as Record<string, Book[]>);
+
+// Get categories that have books (sorted alphabetically)
+const categories = Object.keys(booksByCategory).sort();
 ---
 
 <Layout
@@ -57,37 +71,48 @@ const books: Book[] = libraryData;
                 </a>
             </div>
 
-            <div class="bookshelf">
-                {
-                    books.map((book) => (
-                        <a
-                            href={book.goodreads}
-                            target="_blank"
-                            rel="noopener noreferrer"
-                            class="book-container"
-                        >
-                            <div class="book">
-                                <div class="book-spine" />
-                                <div class="book-cover">
-                                    <img
-                                        src={book.cover}
-                                        alt={book.title}
-                                        loading="lazy"
-                                    />
-                                </div>
-                                <div class="book-pages" />
-                            </div>
-                            <div class="book-info">
-                                <h3 class="book-title">{book.title}</h3>
-                                <p class="book-author">{book.author}</p>
-                                <span class="book-recommended">
-                                    Recomendado por {book.recommendedBy}
-                                </span>
-                            </div>
-                        </a>
-                    ))
-                }
-            </div>
+            {
+                categories.map((category) => (
+                    <div class="category-section">
+                        <div class="category-header">
+                            <span class="category-tag">[{category.toUpperCase()}]</span>
+                            <div class="category-line"></div>
+                            <span class="category-count">{booksByCategory[category].length}</span>
+                        </div>
+                        <div class="bookshelf">
+                            {
+                                booksByCategory[category].map((book) => (
+                                    <a
+                                        href={book.goodreads}
+                                        target="_blank"
+                                        rel="noopener noreferrer"
+                                        class="book-container"
+                                    >
+                                        <div class="book">
+                                            <div class="book-spine" />
+                                            <div class="book-cover">
+                                                <img
+                                                    src={book.cover}
+                                                    alt={book.title}
+                                                    loading="lazy"
+                                                />
+                                            </div>
+                                            <div class="book-pages" />
+                                        </div>
+                                        <div class="book-info">
+                                            <h3 class="book-title">{book.title}</h3>
+                                            <p class="book-author">{book.author}</p>
+                                            <span class="book-recommended">
+                                                Recomendado por {book.recommendedBy}
+                                            </span>
+                                        </div>
+                                    </a>
+                                ))
+                            }
+                        </div>
+                    </div>
+                ))
+            }
 
             <div class="section-footer">
                 <span class="section-tag">&lt;/BIBLIOTECA&gt;</span>
@@ -190,6 +215,49 @@ const books: Book[] = libraryData;
     .btn-text {
         position: relative;
         z-index: 1;
+    }
+
+    /* Category sections */
+    .category-section {
+        margin-bottom: 60px;
+    }
+
+    .category-header {
+        display: flex;
+        align-items: center;
+        gap: 20px;
+        margin-bottom: 30px;
+    }
+
+    .category-tag {
+        font-family: var(--font-display);
+        font-size: 1rem;
+        font-weight: 700;
+        color: var(--primary);
+        letter-spacing: 3px;
+        white-space: nowrap;
+        text-shadow: 0 0 10px rgba(0, 255, 136, 0.3);
+    }
+
+    .category-line {
+        flex: 1;
+        height: 1px;
+        background: linear-gradient(
+            90deg,
+            var(--primary) 0%,
+            rgba(0, 255, 136, 0.3) 50%,
+            transparent 100%
+        );
+    }
+
+    .category-count {
+        font-family: var(--font-display);
+        font-size: 0.75rem;
+        color: var(--text-secondary);
+        letter-spacing: 2px;
+        padding: 4px 12px;
+        border: 1px solid var(--primary);
+        opacity: 0.7;
     }
 
     /* Bookshelf */
