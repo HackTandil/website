@@ -5,6 +5,14 @@
     "cover": "https://m.media-amazon.com/images/S/compressed.photo.goodreads.com/books/1733340973i/216848047.jpg",
     "goodreads": "https://www.goodreads.com/book/show/216848047-ai-engineering",
     "recommendedBy": "@tadeodonegana",
-    "category": "Técnico"
+    "category": "Técnicos"
+  },
+  {
+    "title": "The MANIAC",
+    "author": "Benjamín Labatut",
+    "cover": "https://m.media-amazon.com/images/S/compressed.photo.goodreads.com/books/1679411721i/75665931.jpg",
+    "goodreads": "https://www.goodreads.com/book/show/75665931-the-maniac",
+    "recommendedBy": "@d4rm_",
+    "category": "Ficción"
   }
 ]
