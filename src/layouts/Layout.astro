@@ -674,6 +674,111 @@ const canonicalURL = new URL(Astro.url.pathname, Astro.site);
     gap: 30px;
   }
 
+  /* Partners Section */
+  .partners-intro {
+    text-align: center;
+    margin-bottom: 40px;
+  }
+
+  .partners-intro p {
+    font-size: 1rem;
+    color: var(--text-secondary);
+    letter-spacing: 2px;
+  }
+
+  .partners-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+    gap: 30px;
+  }
+
+  .partner-card {
+    display: flex;
+    flex-direction: column;
+    gap: 24px;
+    padding: 30px;
+    background: linear-gradient(180deg, rgba(15, 15, 15, 0.92), rgba(10, 10, 10, 0.96));
+    border: 1px solid var(--border-glow);
+    text-decoration: none;
+    color: inherit;
+    position: relative;
+    overflow: hidden;
+    transition: border-color 0.3s ease, transform 0.3s ease, box-shadow 0.3s ease;
+  }
+
+  .partner-card::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(135deg, rgba(0, 255, 136, 0.08), transparent 45%);
+    opacity: 0.8;
+    pointer-events: none;
+  }
+
+  .partner-card:hover {
+    border-color: var(--primary);
+    transform: translateY(-4px);
+    box-shadow: 0 18px 40px rgba(0, 255, 136, 0.08);
+  }
+
+  .partner-signal {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 16px;
+    flex-wrap: wrap;
+    position: relative;
+    z-index: 1;
+  }
+
+  .partner-badge,
+  .partner-status {
+    font-size: 0.72rem;
+    letter-spacing: 2px;
+    color: var(--text-dim);
+  }
+
+  .partner-status {
+    color: var(--primary);
+  }
+
+  .partner-logo-shell {
+    position: relative;
+    z-index: 1;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 140px;
+    padding: 24px;
+    border: 1px solid rgba(255, 255, 255, 0.08);
+    background: rgba(255, 255, 255, 0.03);
+  }
+
+  .partner-logo {
+    width: min(100%, 260px);
+    height: auto;
+    display: block;
+  }
+
+  .partner-meta {
+    position: relative;
+    z-index: 1;
+  }
+
+  .partner-name {
+    font-family: var(--font-display);
+    font-size: 1.05rem;
+    letter-spacing: 3px;
+    color: var(--text-primary);
+    margin-bottom: 12px;
+  }
+
+  .partner-desc {
+    font-size: 0.85rem;
+    color: var(--text-secondary);
+    line-height: 1.8;
+  }
+
   .about-card {
     background: rgba(15, 15, 15, 0.8);
     border: 1px solid var(--border-glow);
@@ -949,13 +1054,21 @@ const canonicalURL = new URL(Astro.url.pathname, Astro.site);
       gap: 10px;
     }
 
-    .event-frame {
-      padding: 25px;
-    }
+     .event-frame {
+       padding: 25px;
+     }
 
-    .timeline {
-      padding-left: 30px;
-    }
+      .partner-card {
+        padding: 24px;
+      }
+
+      .partner-logo-shell {
+        min-height: 120px;
+      }
+
+      .timeline {
+        padding-left: 30px;
+      }
 
     .timeline-item {
       padding-left: 20px;
