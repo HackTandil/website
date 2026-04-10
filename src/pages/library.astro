@@ -14,14 +14,17 @@ interface Book {
 const books: Book[] = libraryData;
 
 // Group books by category
-const booksByCategory = books.reduce((acc, book) => {
-    const category = book.category;
-    if (!acc[category]) {
-        acc[category] = [];
-    }
-    acc[category].push(book);
-    return acc;
-}, {} as Record<string, Book[]>);
+const booksByCategory = books.reduce(
+    (acc, book) => {
+        const category = book.category;
+        if (!acc[category]) {
+            acc[category] = [];
+        }
+        acc[category].push(book);
+        return acc;
+    },
+    {} as Record<string, Book[]>,
+);
 
 // Get categories that have books (sorted alphabetically)
 const categories = Object.keys(booksByCategory).sort();
@@ -75,40 +78,42 @@ const categories = Object.keys(booksByCategory).sort();
                 categories.map((category) => (
                     <div class="category-section">
                         <div class="category-header">
-                            <span class="category-tag">[{category.toUpperCase()}]</span>
-                            <div class="category-line"></div>
-                            <span class="category-count">{booksByCategory[category].length}</span>
+                            <span class="category-tag">
+                                [{category.toUpperCase()}]
+                            </span>
+                            <div class="category-line" />
+                            <span class="category-count">
+                                {booksByCategory[category].length}
+                            </span>
                         </div>
                         <div class="bookshelf">
-                            {
-                                booksByCategory[category].map((book) => (
-                                    <a
-                                        href={book.goodreads}
-                                        target="_blank"
-                                        rel="noopener noreferrer"
-                                        class="book-container"
-                                    >
-                                        <div class="book">
-                                            <div class="book-spine" />
-                                            <div class="book-cover">
-                                                <img
-                                                    src={book.cover}
-                                                    alt={book.title}
-                                                    loading="lazy"
-                                                />
-                                            </div>
-                                            <div class="book-pages" />
+                            {booksByCategory[category].map((book) => (
+                                <a
+                                    href={book.goodreads}
+                                    target="_blank"
+                                    rel="noopener noreferrer"
+                                    class="book-container"
+                                >
+                                    <div class="book">
+                                        <div class="book-spine" />
+                                        <div class="book-cover">
+                                            <img
+                                                src={book.cover}
+                                                alt={book.title}
+                                                loading="lazy"
+                                            />
                                         </div>
-                                        <div class="book-info">
-                                            <h3 class="book-title">{book.title}</h3>
-                                            <p class="book-author">{book.author}</p>
-                                            <span class="book-recommended">
-                                                Recomendado por {book.recommendedBy}
-                                            </span>
-                                        </div>
-                                    </a>
-                                ))
-                            }
+                                        <div class="book-pages" />
+                                    </div>
+                                    <div class="book-info">
+                                        <h3 class="book-title">{book.title}</h3>
+                                        <p class="book-author">{book.author}</p>
+                                        <span class="book-recommended">
+                                            Recomendado por {book.recommendedBy}
+                                        </span>
+                                    </div>
+                                </a>
+                            ))}
                         </div>
                     </div>
                 ))
@@ -123,7 +128,7 @@ const categories = Object.keys(booksByCategory).sort();
         <footer class="hud-footer">
             <div class="footer-content">
                 <span class="footer-text"
-                    >© 2025 HACKTANDIL // TODOS LOS DERECHOS RESERVADOS</span
+                    >© 2026 HACKTANDIL // TODOS LOS DERECHOS RESERVADOS</span
                 >
                 <span class="footer-coords"
                     >TANDIL, BUENOS AIRES, ARGENTINA</span
