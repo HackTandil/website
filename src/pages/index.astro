@@ -1,5 +1,6 @@
 ---
 import Layout from "../layouts/Layout.astro";
+import partners from "../data/partners.json";
 ---
 
 <Layout>
@@ -29,7 +30,7 @@ import Layout from "../layouts/Layout.astro";
         </header>
 
         <!-- Hero Section -->
-        <section class="hero">
+        <section class="hero" id="hero">
             <div class="hero-frame">
                 <div class="frame-corner tl"></div>
                 <div class="frame-corner tr"></div>
@@ -59,7 +60,7 @@ import Layout from "../layouts/Layout.astro";
         </section>
 
         <!-- Events Calendar Section -->
-        <section class="events-calendar">
+        <section class="events-calendar" id="eventos">
             <div class="section-header">
                 <span class="section-tag">&lt;EVENTOS&gt;</span>
                 <div class="section-line"></div>
@@ -95,7 +96,7 @@ import Layout from "../layouts/Layout.astro";
         </section>
 
         <!-- About Section -->
-        <section class="about">
+        <section class="about" id="nosotros">
             <div class="section-header">
                 <span class="section-tag">&lt;NOSOTROS&gt;</span>
                 <div class="section-line"></div>
@@ -245,7 +246,7 @@ import Layout from "../layouts/Layout.astro";
         </section>
 
         <!-- Partners Section -->
-        <section class="partners">
+        <section class="partners" id="partners">
             <div class="section-header">
                 <span class="section-tag">&lt;PARTNERS&gt;</span>
                 <div class="section-line"></div>
@@ -259,35 +260,35 @@ import Layout from "../layouts/Layout.astro";
             </div>
 
             <div class="partners-grid">
-                <a
-                    href="https://cursor.com"
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    class="partner-card"
-                >
-                    <div class="partner-signal">
-                        <span class="partner-badge">[PARTNER_001]</span>
-                        <span class="partner-status">EVENT COLLABORATOR</span>
-                    </div>
+                {
+                    partners.map((partner) => (
+                        <a
+                            href={partner.url}
+                            target="_blank"
+                            rel="noopener noreferrer"
+                            class="partner-card"
+                        >
+                            <div class="partner-signal">
+                                <span class="partner-badge">{partner.badge}</span>
+                                <span class="partner-status">{partner.status}</span>
+                            </div>
 
-                    <div class="partner-logo-shell">
-                        <img
-                            src="/assets/CURSOR.svg"
-                            alt="Cursor logo"
-                            class="partner-logo"
-                            loading="lazy"
-                        />
-                    </div>
+                            <div class="partner-logo-shell">
+                                <img
+                                    src={partner.logo}
+                                    alt={partner.logoAlt}
+                                    class="partner-logo"
+                                    loading="lazy"
+                                />
+                            </div>
 
-                    <div class="partner-meta">
-                        <h3 class="partner-name">Cursor Community</h3>
-                        <p class="partner-desc">
-                            Confiaron en Hacktandil para impulsar encuentros de
-                            comunidad y acercar más builders al ecosistema
-                            local.
-                        </p>
-                    </div>
-                </a>
+                            <div class="partner-meta">
+                                <h3 class="partner-name">{partner.name}</h3>
+                                <p class="partner-desc">{partner.description}</p>
+                            </div>
+                        </a>
+                    ))
+                }
             </div>
 
             <div class="section-footer">
@@ -296,7 +297,7 @@ import Layout from "../layouts/Layout.astro";
         </section>
 
         <!-- Contact Section -->
-        <section class="contact">
+        <section class="contact" id="conectar">
             <div class="section-header">
                 <span class="section-tag">&lt;CONECTAR&gt;</span>
                 <div class="section-line"></div>
@@ -375,7 +376,19 @@ import Layout from "../layouts/Layout.astro";
             initCounters();
             initGlitchEffects();
             initFormHandlers();
+            scrollToHashFragment();
         });
+
+        function scrollToHashFragment() {
+            const hash = window.location.hash;
+            if (!hash || hash === "#") return;
+            requestAnimationFrame(() => {
+                const el = document.querySelector(hash);
+                if (el) {
+                    el.scrollIntoView({ behavior: "auto", block: "start" });
+                }
+            });
+        }
 
         // ========================================
         // Date & Time Display
