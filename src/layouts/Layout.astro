@@ -507,6 +507,79 @@ const canonicalURL = new URL(Astro.url.pathname, Astro.site);
     margin-top: 15px;
   }
 
+  .hero-cta-group {
+    margin-top: 32px;
+    display: grid;
+    justify-items: center;
+    gap: 14px;
+  }
+
+  .hero-cta-actions {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 14px;
+  }
+
+  .hero-cta {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+    padding: 12px 22px;
+    border: 1px solid var(--primary);
+    text-decoration: none;
+    color: var(--bg-dark);
+    background: linear-gradient(90deg, var(--primary), #6dffbd);
+    box-shadow: 0 0 24px rgba(0, 255, 136, 0.18);
+    font-family: var(--font-display);
+    font-size: 0.76rem;
+    letter-spacing: 2px;
+    transition: transform 0.25s ease, box-shadow 0.25s ease, filter 0.25s ease;
+  }
+
+  .hero-cta-primary {
+    border-color: var(--primary);
+    background: linear-gradient(90deg, var(--primary), #6dffbd);
+    box-shadow: 0 0 24px rgba(0, 255, 136, 0.18);
+  }
+
+  .hero-cta-secondary {
+    color: var(--secondary);
+    background: rgba(0, 204, 255, 0.08);
+    border-color: rgba(0, 204, 255, 0.45);
+    box-shadow: 0 0 20px rgba(0, 204, 255, 0.12);
+  }
+
+  .hero-cta:hover {
+    transform: translateY(-2px);
+    filter: brightness(1.05);
+  }
+
+  .hero-cta-primary:hover {
+    box-shadow: 0 0 32px rgba(0, 255, 136, 0.28);
+  }
+
+  .hero-cta-secondary:hover {
+    box-shadow: 0 0 28px rgba(0, 204, 255, 0.22);
+  }
+
+  .hero-cta-label {
+    color: rgba(10, 10, 10, 0.75);
+  }
+
+  .hero-cta-secondary .hero-cta-label {
+    color: rgba(0, 204, 255, 0.7);
+  }
+
+  .hero-cta-copy {
+    max-width: 520px;
+    font-size: 0.82rem;
+    color: var(--text-secondary);
+    letter-spacing: 1.5px;
+    line-height: 1.8;
+  }
+
   .hero-stats {
     display: flex;
     justify-content: center;
@@ -1036,6 +1109,19 @@ const canonicalURL = new URL(Astro.url.pathname, Astro.site);
 
     .hero-frame {
       padding: 40px 30px;
+    }
+
+    .hero-cta {
+      width: 100%;
+      padding: 11px 16px;
+    }
+
+    .hero-cta-actions {
+      width: 100%;
+    }
+
+    .hero-cta-copy {
+      letter-spacing: 1px;
     }
 
     .hero-stats {
