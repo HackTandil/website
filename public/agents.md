@@ -8,10 +8,10 @@
 
 ## Sumate
 
-- **[WA] UNITE** — Comunidad en WhatsApp: [https://chat.whatsapp.com/EfF4DW2MU6cGMo8NkcUIul](https://chat.whatsapp.com/EfF4DW2MU6cGMo8NkcUIul)
+- **[IG] SEGUINOS** — Instagram: [https://instagram.com/hacktandil](https://instagram.com/hacktandil)
 - **[LU] EVENTOS** — Calendario en Luma: [https://lu.ma/hacktandil](https://lu.ma/hacktandil)
 
-Sumate a la comunidad por WhatsApp y suscribite al calendario en Luma para no perderte eventos, charlas y novedades de Hacktandil.
+Seguinos en Instagram y suscribite al calendario en Luma para no perderte eventos, charlas y novedades de Hacktandil.
 
 ---
 
@@ -63,7 +63,7 @@ Sé parte del ecosistema tech en crecimiento de Tandil. Desde estudiantes hasta 
 | Luma | [https://lu.ma/hacktandil](https://lu.ma/hacktandil) |
 | X (Twitter) | [https://x.com/hacktandil](https://x.com/hacktandil) |
 | GitHub | [https://github.com/hacktandil](https://github.com/hacktandil) |
-| WhatsApp | [https://chat.whatsapp.com/EfF4DW2MU6cGMo8NkcUIul](https://chat.whatsapp.com/EfF4DW2MU6cGMo8NkcUIul) |
+| Instagram | [https://instagram.com/hacktandil](https://instagram.com/hacktandil) |
 | Dante | [dante@hacktandil.org](mailto:dante@hacktandil.org) |
 | Tadeo | [tadeo@hacktandil.org](mailto:tadeo@hacktandil.org) |
 
