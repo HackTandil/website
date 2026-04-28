@@ -20,7 +20,7 @@ const lumaEventsUrl = "https://lu.ma/hacktandil";
     <div class="particles" id="particles"></div>
 
     <!-- Main container -->
-    <div class="container">
+    <main class="container" id="main-content">
         <!-- Header HUD -->
         <header class="hud-header">
             <div class="hud-corner top-left"></div>
@@ -61,13 +61,13 @@ const lumaEventsUrl = "https://lu.ma/hacktandil";
                     <div class="hero-cta-group">
                         <div class="hero-cta-actions">
                             <a
-                                href={instagramUrl}
+                                href="https://paulgraham.com/gba.html"
                                 target="_blank"
                                 rel="noopener noreferrer"
                                 class="hero-cta hero-cta-primary"
                             >
-                                <span class="hero-cta-label">[IG]</span>
-                                <span>SEGUINOS</span>
+                                <span class="hero-cta-label">[?]</span>
+                                <span>WHY HACKERS?</span>
                             </a>
                             <a
                                 href={lumaEventsUrl}
@@ -79,11 +79,7 @@ const lumaEventsUrl = "https://lu.ma/hacktandil";
                                 <span>EVENTOS</span>
                             </a>
                         </div>
-                        <p class="hero-cta-copy">
-                            Seguinos en Instagram y suscribite al calendario en
-                            Luma para no perderte eventos, charlas y novedades de
-                            Hacktandil.
-                        </p>
+
                     </div>
                 </div>
             </div>
@@ -108,7 +104,7 @@ const lumaEventsUrl = "https://lu.ma/hacktandil";
                     </div>
                     <div class="calendar-embed">
                         <iframe
-                            src="https://luma.com/embed/event/evt-2rYcxMvuUfMRRZQ/simple"
+                            src="https://luma.com/embed/event/evt-vhI4FAB0CXcpoAA/simple"
                             width="600"
                             height="450"
                             frameborder="0"
@@ -341,6 +337,7 @@ const lumaEventsUrl = "https://lu.ma/hacktandil";
                 <a
                     href="https://lu.ma/hacktandil"
                     target="_blank"
+                    rel="noopener noreferrer"
                     class="contact-link"
                 >
                     <span class="contact-icon">[LU]</span>
@@ -349,6 +346,7 @@ const lumaEventsUrl = "https://lu.ma/hacktandil";
                 <a
                     href="https://x.com/hacktandil"
                     target="_blank"
+                    rel="noopener noreferrer"
                     class="contact-link"
                 >
                     <span class="contact-icon">[X]</span>
@@ -358,6 +356,7 @@ const lumaEventsUrl = "https://lu.ma/hacktandil";
                     href="https://github.com/hacktandil"
                     class="contact-link"
                     target="_blank"
+                    rel="noopener noreferrer"
                 >
                     <span class="contact-icon">[GH]</span>
                     <span class="contact-text">GITHUB</span>
@@ -399,7 +398,7 @@ const lumaEventsUrl = "https://lu.ma/hacktandil";
             <div class="hud-corner bottom-left"></div>
             <div class="hud-corner bottom-right"></div>
         </footer>
-    </div>
+    </main>
 
     <script>
         /* ========================================
@@ -414,7 +413,6 @@ const lumaEventsUrl = "https://lu.ma/hacktandil";
             initParticles();
             initCounters();
             initGlitchEffects();
-            initFormHandlers();
             scrollToHashFragment();
         });
 
@@ -591,50 +589,6 @@ const lumaEventsUrl = "https://lu.ma/hacktandil";
         // ========================================
         function initGlitchEffects() {
             // Minimal - no constant animations
-        }
-
-        // ========================================
-        // Form Handlers
-        // ========================================
-        function initFormHandlers() {
-            const newsletterForm = document.getElementById("newsletter-form");
-            if (newsletterForm) {
-                newsletterForm.addEventListener("submit", handleNewsletter);
-            }
-        }
-
-        function handleNewsletter(e: Event) {
-            e.preventDefault();
-
-            const form = e.target as HTMLFormElement;
-            const input = form.querySelector(
-                ".newsletter-input",
-            ) as HTMLInputElement;
-            const btn = form.querySelector(
-                ".newsletter-btn",
-            ) as HTMLButtonElement;
-            const email = input.value;
-
-            const originalText = btn.textContent;
-            btn.textContent = "TRANSMITIENDO...";
-            btn.style.pointerEvents = "none";
-
-            setTimeout(() => {
-                btn.textContent = "SEÑAL RECIBIDA";
-                btn.style.background = "#00ff00";
-                btn.style.borderColor = "#00ff00";
-
-                setTimeout(() => {
-                    alert(
-                        `📡 ¡Transmisión recibida!\n\nEmail: ${email}\n\nRecibirás actualizaciones en esta dirección.`,
-                    );
-                    input.value = "";
-                    btn.textContent = originalText;
-                    btn.style.pointerEvents = "auto";
-                    btn.style.background = "";
-                    btn.style.borderColor = "";
-                }, 1000);
-            }, 1500);
         }
 
         // ========================================

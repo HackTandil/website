@@ -41,7 +41,7 @@ const categories = Object.keys(booksByCategory).sort();
     <div class="grid-bg"></div>
 
     <!-- Main container -->
-    <div class="container">
+    <main class="container" id="main-content">
         <!-- Header HUD -->
         <header class="hud-header">
             <div class="hud-corner top-left"></div>
@@ -137,7 +137,7 @@ const categories = Object.keys(booksByCategory).sort();
             <div class="hud-corner bottom-left"></div>
             <div class="hud-corner bottom-right"></div>
         </footer>
-    </div>
+    </main>
 </Layout>
 
 <style>
@@ -155,6 +155,10 @@ const categories = Object.keys(booksByCategory).sort();
         text-shadow: 0 0 10px var(--secondary);
     }
 
+    .nav-link:active {
+        transform: scale(0.98);
+    }
+
     /* Library intro */
     .library-intro {
         text-align: center;
@@ -166,6 +170,7 @@ const categories = Object.keys(booksByCategory).sort();
         color: var(--text-secondary);
         letter-spacing: 2px;
         margin-bottom: 30px;
+        text-wrap: pretty;
     }
 
     /* Contribute button */
@@ -208,6 +213,10 @@ const categories = Object.keys(booksByCategory).sort();
         left: 0;
     }
 
+    .contribute-btn:active {
+        transform: scale(0.98) translateY(1px);
+    }
+
     .btn-icon {
         font-size: 1rem;
         transition: transform 0.3s ease;
@@ -242,6 +251,7 @@ const categories = Object.keys(booksByCategory).sort();
         letter-spacing: 3px;
         white-space: nowrap;
         text-shadow: 0 0 10px rgba(0, 255, 136, 0.3);
+        text-wrap: balance;
     }
 
     .category-line {
@@ -300,6 +310,10 @@ const categories = Object.keys(booksByCategory).sort();
 
     .book:hover {
         transform: perspective(1000px) rotateY(-5deg) translateY(-10px);
+    }
+
+    .book-container:active .book {
+        transform: perspective(1000px) rotateY(-5deg) translateY(-5px) scale(0.98);
     }
 
     /* Book cover (front) */
@@ -473,12 +487,14 @@ const categories = Object.keys(booksByCategory).sort();
         letter-spacing: 1px;
         margin-bottom: 8px;
         line-height: 1.4;
+        text-wrap: balance;
     }
 
     .book-author {
         font-size: 0.75rem;
         color: var(--primary);
         margin-bottom: 6px;
+        text-wrap: pretty;
     }
 
     .book-recommended {
@@ -486,6 +502,7 @@ const categories = Object.keys(booksByCategory).sort();
         color: var(--text-dim);
         letter-spacing: 1px;
         font-style: italic;
+        text-wrap: pretty;
     }
 
     /* Responsive */

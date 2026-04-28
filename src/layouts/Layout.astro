@@ -122,11 +122,12 @@ const canonicalURL = new URL(Astro.url.pathname, Astro.site);
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
-      href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;500;700;900&family=Share+Tech+Mono&display=swap"
+      href="https://fonts.googleapis.com/css2?family=Geist:wght@400;500;600;700&family=Orbitron:wght@400;500;700;900&family=Share+Tech+Mono&display=swap"
       rel="stylesheet"
     />
   </head>
   <body>
+    <a href="#main-content" class="skip-link">Saltar al contenido</a>
     <slot />
   </body>
 </html>
@@ -144,7 +145,6 @@ const canonicalURL = new URL(Astro.url.pathname, Astro.site);
     --primary-dim: #00aa66;
     --secondary: #00ccff;
     --accent: #ffffff;
-    --warning: #ffaa00;
     --bg-dark: #0a0a0a;
     --bg-mid: #111111;
     --bg-gradient: linear-gradient(180deg, #0a0a0a 0%, #0f0f0f 50%, #0a0a0a 100%);
@@ -154,6 +154,7 @@ const canonicalURL = new URL(Astro.url.pathname, Astro.site);
     --border-glow: rgba(0, 255, 136, 0.25);
     --font-display: 'Orbitron', sans-serif;
     --font-mono: 'Share Tech Mono', monospace;
+    --font-body: 'Geist', sans-serif;
   }
 
   /* Reset & Base */
@@ -165,12 +166,35 @@ const canonicalURL = new URL(Astro.url.pathname, Astro.site);
     box-sizing: border-box;
   }
 
+  *:focus-visible {
+    outline: 2px solid var(--primary);
+    outline-offset: 2px;
+    border-radius: 0;
+  }
+
+  .skip-link {
+    position: absolute;
+    top: -100%;
+    left: 50%;
+    transform: translateX(-50%);
+    padding: 10px 20px;
+    background: var(--primary);
+    color: var(--bg-dark);
+    font-family: var(--font-display);
+    font-size: 0.8rem;
+    letter-spacing: 2px;
+    text-decoration: none;
+    z-index: 9999;
+    transition: top 0.3s ease;
+  }
+  .skip-link:focus { top: 20px; }
+
   html {
     scroll-behavior: smooth;
   }
 
   body {
-    font-family: var(--font-mono);
+    font-family: var(--font-body);
     background: var(--bg-gradient);
     color: var(--text-primary);
     min-height: 100vh;
@@ -197,14 +221,9 @@ const canonicalURL = new URL(Astro.url.pathname, Astro.site);
     );
   }
 
-  .scanlines::after {
-    display: none;
-  }
 
-  /* Glitch Overlay - subtle */
-  .glitch-overlay {
-    display: none;
-  }
+
+
 
   /* Grid Background */
   .grid-bg {
@@ -464,12 +483,10 @@ const canonicalURL = new URL(Astro.url.pathname, Astro.site);
     text-transform: uppercase;
     letter-spacing: 0.15em;
     position: relative;
+    text-wrap: balance;
   }
 
-  .glitch-text::before,
-  .glitch-text::after {
-    display: none;
-  }
+
 
   .subtitle {
     font-size: 1.2rem;
@@ -505,6 +522,7 @@ const canonicalURL = new URL(Astro.url.pathname, Astro.site);
     color: var(--text-secondary);
     letter-spacing: 4px;
     margin-top: 15px;
+    text-wrap: balance;
   }
 
   .hero-cta-group {
@@ -545,10 +563,10 @@ const canonicalURL = new URL(Astro.url.pathname, Astro.site);
   }
 
   .hero-cta-secondary {
-    color: var(--secondary);
-    background: rgba(0, 204, 255, 0.08);
-    border-color: rgba(0, 204, 255, 0.45);
-    box-shadow: 0 0 20px rgba(0, 204, 255, 0.12);
+    color: var(--primary);
+    background: rgba(0, 255, 136, 0.08);
+    border-color: rgba(0, 255, 136, 0.45);
+    box-shadow: 0 0 20px rgba(0, 255, 136, 0.12);
   }
 
   .hero-cta:hover {
@@ -556,12 +574,16 @@ const canonicalURL = new URL(Astro.url.pathname, Astro.site);
     filter: brightness(1.05);
   }
 
+  .hero-cta:active {
+    transform: scale(0.98) translateY(1px);
+  }
+
   .hero-cta-primary:hover {
     box-shadow: 0 0 32px rgba(0, 255, 136, 0.28);
   }
 
   .hero-cta-secondary:hover {
-    box-shadow: 0 0 28px rgba(0, 204, 255, 0.22);
+    box-shadow: 0 0 28px rgba(0, 255, 136, 0.22);
   }
 
   .hero-cta-label {
@@ -569,7 +591,7 @@ const canonicalURL = new URL(Astro.url.pathname, Astro.site);
   }
 
   .hero-cta-secondary .hero-cta-label {
-    color: rgba(0, 204, 255, 0.7);
+    color: rgba(0, 255, 136, 0.7);
   }
 
   .hero-cta-copy {
@@ -578,6 +600,7 @@ const canonicalURL = new URL(Astro.url.pathname, Astro.site);
     color: var(--text-secondary);
     letter-spacing: 1.5px;
     line-height: 1.8;
+    text-wrap: balance;
   }
 
   .hero-stats {
@@ -757,6 +780,7 @@ const canonicalURL = new URL(Astro.url.pathname, Astro.site);
     font-size: 1rem;
     color: var(--text-secondary);
     letter-spacing: 2px;
+    text-wrap: pretty;
   }
 
   .partners-grid {
@@ -792,6 +816,10 @@ const canonicalURL = new URL(Astro.url.pathname, Astro.site);
     border-color: var(--primary);
     transform: translateY(-4px);
     box-shadow: 0 18px 40px rgba(0, 255, 136, 0.08);
+  }
+
+  .partner-card:active {
+    transform: scale(0.98);
   }
 
   .partner-signal {
@@ -844,12 +872,14 @@ const canonicalURL = new URL(Astro.url.pathname, Astro.site);
     letter-spacing: 3px;
     color: var(--text-primary);
     margin-bottom: 12px;
+    text-wrap: balance;
   }
 
   .partner-desc {
     font-size: 0.85rem;
     color: var(--text-secondary);
     line-height: 1.8;
+    text-wrap: pretty;
   }
 
   .about-card {
@@ -863,6 +893,10 @@ const canonicalURL = new URL(Astro.url.pathname, Astro.site);
 
   .about-card:hover {
     border-color: var(--primary);
+  }
+
+  .about-card:active {
+    transform: scale(0.98);
   }
 
   .card-icon {
@@ -889,12 +923,14 @@ const canonicalURL = new URL(Astro.url.pathname, Astro.site);
     color: var(--text-primary);
     letter-spacing: 3px;
     margin-bottom: 15px;
+    text-wrap: balance;
   }
 
   .card-desc {
     font-size: 0.85rem;
     color: var(--text-secondary);
     line-height: 1.8;
+    text-wrap: pretty;
   }
 
   /* Timeline */
@@ -962,6 +998,7 @@ const canonicalURL = new URL(Astro.url.pathname, Astro.site);
     background: rgba(26, 10, 46, 0.3);
     border-left: 2px solid transparent;
     transition: all 0.3s ease;
+    text-wrap: pretty;
   }
 
   .timeline-item:hover .timeline-content {
@@ -1006,6 +1043,10 @@ const canonicalURL = new URL(Astro.url.pathname, Astro.site);
   .contact-link:hover {
     border-color: var(--primary);
     background: rgba(0, 255, 136, 0.05);
+  }
+
+  .contact-link:active {
+    transform: scale(0.98);
   }
 
   .contact-icon {

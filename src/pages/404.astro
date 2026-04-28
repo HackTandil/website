@@ -1,0 +1,89 @@
+---
+import Layout from "../layouts/Layout.astro";
+---
+
+<Layout
+  title="404 | HACKTANDIL"
+  description="Página no encontrada - Hacktandil"
+>
+  <div class="scanlines"></div>
+  <div class="grid-bg"></div>
+  <div class="particles" id="particles"></div>
+  
+  <main class="container" id="main-content">
+    <header class="hud-header">
+      <div class="hud-corner top-left"></div>
+      <div class="hud-corner top-right"></div>
+      <div class="status-bar">
+        <a href="/" class="nav-link">← INICIO</a>
+        <span class="status-item">ERROR 404</span>
+        <span class="status-item">SEÑAL PERDIDA</span>
+      </div>
+    </header>
+    
+    <section class="hero hero-404">
+      <div class="hero-frame">
+        <div class="frame-corner tl"></div>
+        <div class="frame-corner tr"></div>
+        <div class="frame-corner bl"></div>
+        <div class="frame-corner br"></div>
+        
+        <div class="hero-content">
+          <div class="glitch-text glitch-text-404">404</div>
+          <div class="subtitle">
+            <span class="bracket">[</span>
+            <span>PÁGINA NO ENCONTRADA</span>
+            <span class="bracket">]</span>
+          </div>
+          <p class="tagline">// LA SEÑAL SE PERDIÓ EN EL VACÍO</p>
+          <div class="hero-cta-group">
+            <div class="hero-cta-actions">
+              <a href="/" class="hero-cta hero-cta-primary">
+                <span class="hero-cta-label">[<<]</span>
+                <span>VOLVER AL INICIO</span>
+              </a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+    
+    <footer class="hud-footer">
+      <div class="footer-content">
+        <span class="footer-text">© 2026 HACKTANDIL // TODOS LOS DERECHOS RESERVADOS</span>
+        <span class="footer-coords">TANDIL, BUENOS AIRES, ARGENTINA</span>
+      </div>
+      <div class="hud-corner bottom-left"></div>
+      <div class="hud-corner bottom-right"></div>
+    </footer>
+  </main>
+</Layout>
+
+<style>
+  /* Navigation link - same as library.astro */
+  .nav-link {
+    color: var(--primary);
+    text-decoration: none;
+    font-size: 0.75rem;
+    letter-spacing: 2px;
+    transition: all 0.3s ease;
+  }
+
+  .nav-link:hover {
+    color: var(--secondary);
+    text-shadow: 0 0 10px var(--secondary);
+  }
+
+  .nav-link:active {
+    transform: scale(0.98);
+  }
+
+  /* 404-specific overrides */
+  .hero-404 {
+    min-height: 60vh;
+  }
+
+  .glitch-text-404 {
+    font-size: clamp(4rem, 15vw, 8rem);
+  }
+</style>
