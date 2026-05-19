@@ -17,7 +17,7 @@ Seguinos en Instagram y suscribite al calendario en Luma para no perderte evento
 
 ## Eventos
 
-**Próximos eventos** — embed Luma: [https://luma.com/embed/event/evt-2rYcxMvuUfMRRZQ/simple](https://luma.com/embed/event/evt-2rYcxMvuUfMRRZQ/simple)
+**Próximos eventos** — embed Luma: [https://luma.com/embed/event/evt-te4KRA7N9IShrPL/simple](https://luma.com/embed/event/evt-te4KRA7N9IShrPL/simple)
 
 Página pública del calendario: [https://lu.ma/hacktandil](https://lu.ma/hacktandil)
 
