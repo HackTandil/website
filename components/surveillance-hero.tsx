@@ -3,7 +3,6 @@
 import { useEffect, useRef, useState } from "react";
 import { AsciiShader } from "./ascii-shader";
 import { CctvHud, type TrackTarget } from "./cctv-hud";
-import { FloatingNav } from "./floating-nav";
 
 // 9:16 portrait crop shipped to mobile (/assets/images/mobile.webp, 1440 x 2560).
 const MOBILE_IMAGE_ASPECT = 1440 / 2560;
@@ -103,8 +102,8 @@ export function SurveillanceHero() {
 	const hudOpacity = 1 - mapRange(progress, 0.45, 0.62);
 	// 4. hero copy rises in once we're fullscreen
 	const heroIn = mapRange(progress, 0.5, 0.7);
-	// 5. brackets re-form as floating nav markers
-	const navIn = mapRange(progress, 0.72, 0.9);
+	// 5. masthead chrome fades out as the photo decodes into the ASCII signal
+	const mastheadOpacity = 1 - mapRange(progress, 0.28, 0.5);
 
 	// frame geometry: small centered monitor → full viewport. The starting
 	// frame is taller/narrower on mobile so the 9:16 portrait feed isn't
@@ -116,6 +115,32 @@ export function SurveillanceHero() {
 
 	return (
 		<section ref={sectionRef} className="relative h-[420vh]">
+			{/* masthead chrome — visible over the live feed, fades out on decode */}
+			<header
+				className="fixed inset-x-0 top-0 z-50 flex items-center justify-between px-5 py-4 font-mono text-[11px] tracking-[0.25em] text-foreground/85 transition-opacity duration-200 sm:px-8"
+				style={{
+					opacity: mastheadOpacity,
+					pointerEvents: mastheadOpacity < 0.05 ? "none" : "auto",
+				}}
+				aria-hidden={mastheadOpacity < 0.05}
+			>
+				<span className="text-[var(--hud)]">EN VIVO</span>
+				<nav className="hidden gap-6 sm:flex">
+					<a href="#mission" className="transition-colors hover:text-[var(--hud)]">
+						MISIÓN
+					</a>
+					<a href="#partners" className="transition-colors hover:text-[var(--hud)]">
+						PARTNERS
+					</a>
+					<a href="#events" className="transition-colors hover:text-[var(--hud)]">
+						EVENTOS
+					</a>
+					<a href="#community" className="transition-colors hover:text-[var(--hud)]">
+						COMUNIDAD
+					</a>
+				</nav>
+				<span className="text-[var(--hud)]">EST. 1908</span>
+			</header>
 			<div className="sticky top-0 flex h-screen items-center justify-center overflow-hidden bg-black">
 				{/* expanding feed */}
 				<div
@@ -152,14 +177,11 @@ export function SurveillanceHero() {
 						targets={isMobile ? MOBILE_TARGETS : undefined}
 					/>
 
-					{/* floating nav markers — brackets re-form here */}
-					<FloatingNav opacity={navIn} />
-
 					{/* hero copy */}
 					<div
 						className="pointer-events-none absolute inset-0 z-20 flex flex-col items-center justify-center px-6 text-center"
 						style={{
-							opacity: heroIn * (1 - navIn * 0.15),
+							opacity: heroIn,
 							transform: `translateY(${(1 - heroIn) * 28}px)`,
 						}}
 					>

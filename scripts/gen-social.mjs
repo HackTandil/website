@@ -15,7 +15,7 @@ import { join, dirname } from 'node:path'
 import { fileURLToPath } from 'node:url'
 
 const ROOT = join(dirname(fileURLToPath(import.meta.url)), '..')
-const SRC_LANDSCAPE = join(ROOT, 'public/assets/images/shader-lab-2026-06-23T02-07-55.png')
+const SRC_LANDSCAPE = join(ROOT, 'public/assets/images/og-ascii.jpg')
 const SRC_PORTRAIT = join(ROOT, 'public/assets/images/mobile.jpg')
 const OUT_DIR = join(ROOT, 'public/social')
 const tmp = mkdtempSync(join(tmpdir(), 'hacktandil-social-'))

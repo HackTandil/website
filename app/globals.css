@@ -198,26 +198,3 @@
     animation: none;
   }
 }
-
-/* drifting nav markers */
-.floating-marker {
-  animation-name: marker-float;
-  animation-timing-function: ease-in-out;
-  animation-iteration-count: infinite;
-  animation-direction: alternate;
-}
-
-@keyframes marker-float {
-  from {
-    transform: translate(-50%, -50%) translateY(-9px);
-  }
-  to {
-    transform: translate(-50%, -50%) translateY(11px);
-  }
-}
-
-@media (prefers-reduced-motion: reduce) {
-  .floating-marker {
-    animation: none;
-  }
-}

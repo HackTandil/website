@@ -21,38 +21,6 @@ const PARTNERS = [
 export default function Page() {
 	return (
 		<main className="bg-background text-foreground">
-			{/* masthead */}
-			<header className="fixed inset-x-0 top-0 z-50 flex items-center justify-between px-5 py-4 font-mono text-[11px] tracking-[0.25em] text-foreground/85 sm:px-8">
-				<span className="text-[var(--hud)]">EN VIVO</span>
-				<nav className="hidden gap-6 sm:flex">
-					<a
-						href="#mission"
-						className="transition-colors hover:text-[var(--hud)]"
-					>
-						MISIÓN
-					</a>
-					<a
-						href="#partners"
-						className="transition-colors hover:text-[var(--hud)]"
-					>
-						PARTNERS
-					</a>
-					<a
-						href="#events"
-						className="transition-colors hover:text-[var(--hud)]"
-					>
-						EVENTOS
-					</a>
-					<a
-						href="#community"
-						className="transition-colors hover:text-[var(--hud)]"
-					>
-						COMUNIDAD
-					</a>
-				</nav>
-				<span className="text-[var(--hud)]">EST. 1908</span>
-			</header>
-
 			<SurveillanceHero />
 
 			{/* MISSION */}
@@ -199,7 +167,7 @@ export default function Page() {
 							rel="noreferrer"
 							className="inline-flex items-center gap-2 border border-[var(--hud)] bg-[var(--hud)] px-7 py-3 font-mono text-xs font-semibold tracking-[0.2em] text-black transition-colors hover:bg-transparent hover:text-[var(--hud)]"
 						>
-							VER EVENTOS EN LUMA
+							CALENDARIO DE EVENTOS
 							<span aria-hidden="true">→</span>
 						</a>
 					</div>
