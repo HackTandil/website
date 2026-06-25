@@ -16,6 +16,16 @@ const PARTNERS = [
 		logo: "/assets/partners/NODO SERRANO.png",
 		href: "https://nodoserrano.org",
 	},
+	{
+		name: "The Red Guild",
+		logo: "/assets/partners/THE RED GUILD.svg",
+		href: "https://theredguild.org",
+	},
+	{
+		name: "Cluster Tecnologico Tandil",
+		logo: "/assets/partners/CLUSTER TANDIL.png",
+		href: "https://www.clustertecnologicotandil.org.ar/",
+	},
 ];
 
 export default function Page() {
