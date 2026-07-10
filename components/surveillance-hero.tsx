@@ -115,7 +115,7 @@ export function SurveillanceHero() {
 	const borderAlpha = (1 - expand) * 0.25;
 
 	return (
-		<section ref={sectionRef} className="relative h-[420vh]">
+		<section ref={sectionRef} className="relative h-[210vh]">
 			{/* masthead — nav stays put; only the live-feed tags fade out on decode */}
 			<header className="fixed inset-x-0 top-0 z-50 flex items-center justify-between px-5 py-4 font-mono text-[11px] tracking-[0.25em] text-foreground/85 sm:px-8">
 				<span
@@ -137,6 +137,14 @@ export function SurveillanceHero() {
 					</a>
 					<a href="#community" className="transition-colors hover:text-[var(--hud)]">
 						COMUNIDAD
+					</a>
+					<a
+						href="https://platform.hacktandil.org"
+						target="_blank"
+						rel="noopener noreferrer"
+						className="transition-colors hover:text-[var(--hud)]"
+					>
+						PLATAFORMA (BETA)
 					</a>
 				</nav>
 				<span

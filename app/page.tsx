@@ -184,6 +184,16 @@ export default function Page() {
 					<ul className="mx-auto mt-8 flex max-w-md flex-wrap items-center justify-center gap-x-8 gap-y-3 font-mono text-[11px] tracking-[0.25em] text-foreground/75">
 						<li>
 							<a
+								href="https://platform.hacktandil.org"
+								target="_blank"
+								rel="noreferrer"
+								className="transition-colors hover:text-[var(--hud)]"
+							>
+								PLATAFORMA (BETA) ↗
+							</a>
+						</li>
+						<li>
+							<a
 								href="https://instagram.com/hacktandil"
 								target="_blank"
 								rel="noreferrer"
