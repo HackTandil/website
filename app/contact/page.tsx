@@ -24,7 +24,6 @@ const contactJsonLd = {
 		email: "contacto@hacktandil.org",
 		address: {
 			"@type": "PostalAddress",
-			streetAddress: "Cluster Tecnológico Tandil",
 			addressLocality: "Tandil",
 			addressRegion: "Buenos Aires",
 			postalCode: "B7000",
@@ -301,9 +300,8 @@ export default function ContactPage() {
 							4. Ubicación y Contexto Geográfico
 						</h2>
 						<p className="mt-3 text-foreground/85">
-							Los encuentros de HackTandil se realizan en diversos espacios
-							tecnológicos y venues de la ciudad de Tandil, con epicentro en el
-							polo tecnológico:
+							Los encuentros y actividades de HackTandil se realizan en diversos
+							espacios y sedes de la ciudad de Tandil:
 						</p>
 						<div className="mt-4 border border-border p-6 bg-card/20 font-mono text-xs">
 							<p className="text-foreground/90 font-sans text-sm">
@@ -313,11 +311,6 @@ export default function ContactPage() {
 							<p className="mt-2 text-foreground/90 font-sans text-sm">
 								<strong>Coordenadas Geográficas:</strong> Latitud -37.3217,
 								Longitud -59.1328
-							</p>
-							<p className="mt-2 text-foreground/90 font-sans text-sm">
-								<strong>Ecosistema Institucional:</strong> Cluster Tecnológico
-								Tandil / Cámara de Empresas del Polo Informático de Tandil
-								(CEPIT)
 							</p>
 						</div>
 					</section>

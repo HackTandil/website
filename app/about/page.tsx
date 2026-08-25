@@ -25,7 +25,6 @@ const aboutJsonLd = {
 			"Comunidad tecnológica y hub de software de Tandil, Buenos Aires, Argentina. Ecosistema CEPIT y Cluster Tecnológico Tandil.",
 		address: {
 			"@type": "PostalAddress",
-			streetAddress: "Cluster Tecnológico Tandil",
 			addressLocality: "Tandil",
 			addressRegion: "Buenos Aires",
 			postalCode: "B7000",

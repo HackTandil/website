@@ -92,7 +92,6 @@ Canales oficiales de comunicación y soporte para la comunidad tecnológica de T
 ## Ubicación y Sede
 - Ciudad: Tandil, Provincia de Buenos Aires, Argentina (CP B7000)
 - Coordenadas: Latitud -37.3217, Longitud -59.1328
-- Ecosistema: Cluster Tecnológico Tandil / CEPIT
 `,
 
 	"/privacy": `# Política de Privacidad // Privacy Policy — HackTandil
@@ -112,7 +111,7 @@ Cualquier usuario puede solicitar el acceso, rectificación o eliminación de su
 
 ## 4. Contacto de Privacidad
 - Email: contacto@hacktandil.org
-- Domicilio: Cluster Tecnológico Tandil, Tandil (B7000), Buenos Aires, Argentina.
+- Ubicación: Tandil (B7000), Buenos Aires, Argentina.
 `,
 };
 

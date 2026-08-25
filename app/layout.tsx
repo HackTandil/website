@@ -120,12 +120,11 @@ const organizationJsonLd = {
 	logo: `${SITE_URL}/logo.svg`,
 	image: `${SITE_URL}/social/og.png`,
 	description:
-		"Hacktandil es la comunidad tecnológica y polo de innovación de software en Tandil, Buenos Aires, Argentina. Conectamos desarrolladores, ingenieros de IA, estudiantes y fundadores en el Cluster Tecnológico Tandil y el ecosistema CEPIT.",
+		"Hacktandil es la comunidad tecnológica y polo de innovación de software en Tandil, Buenos Aires, Argentina. Conectamos desarrolladores, ingenieros de IA, estudiantes y fundadores.",
 	email: "contacto@hacktandil.org",
 	foundingDate: "2024",
 	address: {
 		"@type": "PostalAddress",
-		streetAddress: "Cluster Tecnológico Tandil",
 		addressLocality: "Tandil",
 		addressRegion: "Buenos Aires",
 		postalCode: "B7000",

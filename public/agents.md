@@ -76,6 +76,5 @@ Sé parte del ecosistema tech en crecimiento de Tandil. Desde estudiantes y grad
 - **Sitio:** [https://hacktandil.org](https://hacktandil.org)
 - **Ubicación:** Tandil, Buenos Aires, Argentina (Código Postal: B7000)
 - **Coordenadas:** LAT -37.3217, LON -59.1328
-- **Ecosistema:** CEPIT / Cluster Tecnológico Tandil
 
 © 2026 HACKTANDIL // TODOS LOS DERECHOS RESERVADOS — TANDIL, BUENOS AIRES, ARGENTINA

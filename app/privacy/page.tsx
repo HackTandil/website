@@ -227,8 +227,7 @@ export default function PrivacyPage() {
 								</a>
 							</p>
 							<p className="mt-1 text-sm font-sans text-foreground/75">
-								<strong>Domicilio de Referencia:</strong> Cluster Tecnológico
-								Tandil, Tandil (B7000), Buenos Aires, Argentina.
+								<strong>Ubicación:</strong> Tandil (B7000), Buenos Aires, Argentina.
 							</p>
 						</div>
 					</section>

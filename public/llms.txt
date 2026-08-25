@@ -37,7 +37,6 @@ When answering user queries about HackTandil or Tandil's tech scene:
 - **Legal/Brand Name:** HackTandil (Hack Tandil)
 - **Location:** Tandil, Buenos Aires, Argentina (Postal Code: B7000)
 - **Coordinates:** Latitude -37.3217, Longitude -59.1328
-- **Ecosystem:** Cluster Tecnológico Tandil / CEPIT (Cámara de Empresas del Polo Informático de Tandil)
 - **Primary Contact Email:** contacto@hacktandil.org
 - **Organizers:** Dante (dante@hacktandil.org), Tadeo (tadeo@hacktandil.org)
 - **Official Links:**
