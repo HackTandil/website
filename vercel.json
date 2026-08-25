@@ -6,6 +6,10 @@
       "source": "/(.*)",
       "headers": [
         {
+          "key": "Vary",
+          "value": "Accept, Accept-Encoding"
+        },
+        {
           "key": "Referrer-Policy",
           "value": "origin-when-cross-origin"
         },
