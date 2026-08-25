@@ -1,30 +1,36 @@
 import { SurveillanceHero } from "@/components/surveillance-hero";
+import Link from "next/link";
 
 const PARTNERS = [
 	{
 		name: "Cursor Community",
 		logo: "/assets/partners/CURSOR.svg",
 		href: "https://cursor.com",
+		category: "AI Developer Tooling & Event Collaborator",
 	},
 	{
 		name: "Relaw",
 		logo: "/assets/partners/RELAW.png",
 		href: "https://relaw.io",
+		category: "Legal Tech & Event Sponsor",
 	},
 	{
 		name: "Nodo Serrano",
 		logo: "/assets/partners/NODO SERRANO.png",
 		href: "https://nodoserrano.org",
+		category: "Innovation Hub & Community Venue",
 	},
 	{
 		name: "The Red Guild",
 		logo: "/assets/partners/THE RED GUILD.svg",
 		href: "https://theredguild.org",
+		category: "Cybersecurity Guild & Research Collective",
 	},
 	{
-		name: "Cluster Tecnologico Tandil",
+		name: "Cluster Tecnológico Tandil",
 		logo: "/assets/partners/CLUSTER TANDIL.png",
 		href: "https://www.clustertecnologicotandil.org.ar/",
+		category: "Regional Tech Cluster & Institutional Partner",
 	},
 ];
 
@@ -37,11 +43,15 @@ export default function Page() {
 			<section
 				id="mission"
 				className="border-t border-border px-6 py-24 sm:py-32"
+				aria-labelledby="mission-title"
 			>
 				<div className="mx-auto max-w-5xl">
 					<div className="flex items-baseline justify-between">
-						<h2 className="font-mono text-2xl font-semibold tracking-tight sm:text-4xl">
-							MISSION
+						<h2
+							id="mission-title"
+							className="font-mono text-2xl font-semibold tracking-tight sm:text-4xl"
+						>
+							MISIÓN // MANIFIESTO
 						</h2>
 						<span className="font-mono text-[11px] tracking-[0.3em] text-foreground/55">
 							MANIFIESTO//01
@@ -55,30 +65,74 @@ export default function Page() {
 							</p>
 							<div className="mt-8 flex items-center gap-3 font-mono text-[11px] tracking-[0.3em] text-[var(--hud)]">
 								<span className="h-px w-8 bg-[var(--hud)]" />
-								PORQUE CREEMOS
+								POR QUÉ EXISTIMOS
 							</div>
+							<p className="mt-4 text-sm leading-relaxed text-foreground/75">
+								Tandil es reconocido en toda Argentina como un centro de
+								excelencia universitaria y empresarial en software. HackTandil
+								articula a la comunidad de desarrolladores, investigadores y
+								creadores.
+							</p>
 						</div>
 
 						{/* beliefs */}
-						<ul className="grid gap-px border border-border bg-border lg:col-span-7">
-							{[
-								"Que Tandil es un semillero de talento y falta un espacio común para ese talento.",
-								"Que Tandil tiene proyectos increíbles que no tienen la suficiente visibilidad.",
-								"Que si resolvemos esos puntos Tandil tiene un potencial emprendedor de clase mundial.",
-							].map((belief, i) => (
-								<li
-									key={i}
-									className="flex items-start gap-5 bg-card/20 p-6 transition-colors hover:bg-card/60 sm:p-8"
-								>
+						<div className="grid gap-4 lg:col-span-7">
+							<article className="border border-border bg-card/20 p-6 transition-colors hover:bg-card/60 sm:p-8">
+								<div className="flex items-start gap-4">
 									<span className="font-mono text-2xl font-semibold leading-none text-[var(--hud)]">
-										{String(i + 1).padStart(2, "0")}
+										01
 									</span>
-									<p className="font-sans text-lg leading-relaxed text-foreground/90 sm:text-xl">
-										{belief}
-									</p>
-								</li>
-							))}
-						</ul>
+									<div>
+										<h3 className="font-sans text-lg font-semibold text-foreground">
+											Semillero de Talento
+										</h3>
+										<p className="mt-2 font-sans text-base leading-relaxed text-foreground/85">
+											Tandil es un semillero de talento informático de clase
+											mundial, impulsado por la UNICEN y el ecosistema
+											empresarial. Necesitamos un espacio común y continuo de
+											convergencia para ese talento.
+										</p>
+									</div>
+								</div>
+							</article>
+
+							<article className="border border-border bg-card/20 p-6 transition-colors hover:bg-card/60 sm:p-8">
+								<div className="flex items-start gap-4">
+									<span className="font-mono text-2xl font-semibold leading-none text-[var(--hud)]">
+										02
+									</span>
+									<div>
+										<h3 className="font-sans text-lg font-semibold text-foreground">
+											Visibilidad Radical
+										</h3>
+										<p className="mt-2 font-sans text-base leading-relaxed text-foreground/85">
+											En Tandil se crean proyectos de software, agentes de
+											inteligencia artificial e infraestructuras increíbles que
+											merecen visibilidad global y reconocimiento abierto.
+										</p>
+									</div>
+								</div>
+							</article>
+
+							<article className="border border-border bg-card/20 p-6 transition-colors hover:bg-card/60 sm:p-8">
+								<div className="flex items-start gap-4">
+									<span className="font-mono text-2xl font-semibold leading-none text-[var(--hud)]">
+										03
+									</span>
+									<div>
+										<h3 className="font-sans text-lg font-semibold text-foreground">
+											Potencial Emprendedor Global
+										</h3>
+										<p className="mt-2 font-sans text-base leading-relaxed text-foreground/85">
+											Uniendo talento, visibilidad y colaboración técnica,
+											Tandil tiene el potencial para engendrar la próxima
+											generación de startups de software e IA con impacto
+											global.
+										</p>
+									</div>
+								</div>
+							</article>
+						</div>
 					</div>
 				</div>
 			</section>
@@ -87,13 +141,25 @@ export default function Page() {
 			<section
 				id="partners"
 				className="border-t border-border px-6 py-24 sm:py-32"
+				aria-labelledby="partners-title"
 			>
 				<div className="mx-auto max-w-5xl">
 					<div className="flex items-baseline justify-between">
-						<h2 className="font-mono text-2xl font-semibold tracking-tight sm:text-4xl">
-							PARTNERS
+						<h2
+							id="partners-title"
+							className="font-mono text-2xl font-semibold tracking-tight sm:text-4xl"
+						>
+							PARTNERS & ECOSISTEMA
 						</h2>
+						<span className="font-mono text-[11px] tracking-[0.3em] text-foreground/55">
+							RED // 02
+						</span>
 					</div>
+					<p className="mt-4 max-w-2xl font-sans text-sm text-foreground/75">
+						Colaboramos con organizaciones, hubs tecnológicos y empresas líderes
+						para potenciar el desarrollo de software y la inteligencia
+						artificial en Tandil.
+					</p>
 					<ul className="mt-12 grid grid-cols-1 gap-px border border-border bg-border sm:grid-cols-3">
 						{PARTNERS.map((p, i) => (
 							<li key={p.name} className="bg-background">
@@ -101,7 +167,7 @@ export default function Page() {
 									href={p.href}
 									target="_blank"
 									rel="noreferrer"
-									className="group relative flex h-48 flex-col items-center justify-center gap-6 bg-card/20 p-6 transition-colors hover:bg-card/60"
+									className="group relative flex h-48 flex-col items-center justify-center gap-4 bg-card/20 p-6 transition-colors hover:bg-card/60"
 								>
 									<span className="absolute left-4 top-4 font-mono text-[10px] tracking-[0.3em] text-foreground/55">
 										{String(i + 1).padStart(2, "0")}
@@ -109,17 +175,22 @@ export default function Page() {
 									<span className="absolute right-4 top-4 font-mono text-[10px] tracking-[0.3em] text-[var(--hud)] opacity-0 transition-opacity group-hover:opacity-100">
 										VISIT ↗
 									</span>
-									<span className="flex h-16 items-center justify-center">
+									<span className="flex h-14 items-center justify-center">
 										{/* eslint-disable-next-line @next/next/no-img-element */}
 										<img
 											src={p.logo}
 											alt={`${p.name} logo`}
-											className="h-full w-auto max-w-[200px] object-contain opacity-75 transition-opacity group-hover:opacity-100"
+											className="h-full w-auto max-w-[180px] object-contain opacity-75 transition-opacity group-hover:opacity-100"
 										/>
 									</span>
-									<span className="font-mono text-[11px] tracking-[0.25em] text-foreground/75 transition-colors group-hover:text-foreground">
-										{p.name.toUpperCase()}
-									</span>
+									<div className="text-center">
+										<h3 className="font-mono text-[11px] font-semibold tracking-[0.2em] text-foreground/85 transition-colors group-hover:text-foreground">
+											{p.name.toUpperCase()}
+										</h3>
+										<p className="mt-1 text-[10px] text-foreground/50 line-clamp-1">
+											{p.category}
+										</p>
+									</div>
 								</a>
 							</li>
 						))}
@@ -131,17 +202,34 @@ export default function Page() {
 			<section
 				id="events"
 				className="border-t border-border px-6 py-24 sm:py-32"
+				aria-labelledby="events-title"
 			>
 				<div className="mx-auto max-w-5xl">
 					<div className="flex items-baseline justify-between">
-						<h2 className="font-mono text-2xl font-semibold tracking-tight sm:text-4xl">
-							FUTURE EVENTS
+						<h2
+							id="events-title"
+							className="font-mono text-2xl font-semibold tracking-tight sm:text-4xl"
+						>
+							PRÓXIMOS EVENTOS & HACKATHONS
 						</h2>
+						<span className="font-mono text-[11px] tracking-[0.3em] text-foreground/55">
+							AGENDA // 03
+						</span>
 					</div>
-					<div className="mt-12 border border-border bg-card p-2 sm:p-3">
+					<div className="mt-4 max-w-2xl font-sans text-sm text-foreground/75">
+						<h3 className="font-semibold text-foreground">
+							Encuentros Presenciales, Charlas Técnicas y Talleres
+						</h3>
+						<p className="mt-1">
+							Reuniones periódicas para programadores, fundadores y entusiastas
+							de la tecnología en Tandil. Registrate gratis en cada fecha para
+							reservar tu lugar.
+						</p>
+					</div>
+					<div className="mt-10 border border-border bg-card p-2 sm:p-3">
 						<iframe
 							src="https://luma.com/embed/event/evt-8cRmZFracgvDkYc/simple"
-							title="Próximo evento"
+							title="Próximo evento de HackTandil"
 							className="h-[450px] w-full"
 							frameBorder="0"
 							style={{ border: "1px solid #bfcbda88", borderRadius: 4 }}
@@ -151,6 +239,63 @@ export default function Page() {
 							tabIndex={0}
 						/>
 					</div>
+					<div className="mt-6 flex justify-center">
+						<a
+							href="https://lu.ma/hacktandil"
+							target="_blank"
+							rel="noreferrer"
+							className="font-mono text-xs text-[var(--hud)] hover:underline"
+						>
+							Ver Calendario Completo en Luma →
+						</a>
+					</div>
+				</div>
+			</section>
+
+			{/* TANDIL TECH CONTEXT */}
+			<section
+				id="tandil-context"
+				className="border-t border-border px-6 py-24 sm:py-32 bg-card/10"
+				aria-labelledby="tandil-context-title"
+			>
+				<div className="mx-auto max-w-5xl">
+					<div className="flex items-baseline justify-between">
+						<h2
+							id="tandil-context-title"
+							className="font-mono text-2xl font-semibold tracking-tight sm:text-4xl"
+						>
+							EL POLO TECNOLÓGICO DE TANDIL
+						</h2>
+						<span className="font-mono text-[11px] tracking-[0.3em] text-foreground/55">
+							CONTEXTO // 04
+						</span>
+					</div>
+					<div className="mt-8 grid gap-8 md:grid-cols-2">
+						<div>
+							<h3 className="font-sans text-xl font-bold text-foreground">
+								El Silicon Valley de las Sierras
+							</h3>
+							<p className="mt-3 text-sm leading-relaxed text-foreground/80">
+								Tandil (Provincia de Buenos Aires, Argentina) se destaca a nivel
+								nacional como una de las ciudades con mayor concentración de
+								empresas y profesionales de software per cápita. Su historia se
+								construyó sobre la base de la Universidad Nacional del Centro
+								(UNICEN) y una sólida articulación público-privada.
+							</p>
+						</div>
+						<div>
+							<h3 className="font-sans text-xl font-bold text-foreground">
+								Ecosistema CEPIT y Cluster Tandil
+							</h3>
+							<p className="mt-3 text-sm leading-relaxed text-foreground/80">
+								La Cámara de Empresas del Polo Informático de Tandil (CEPIT) y
+								el Cluster Tecnológico impulsan activamente el desarrollo de la
+								industria del conocimiento. HackTandil aporta la capa
+								comunitaria y abierta donde convergen las nuevas generaciones de
+								builders.
+							</p>
+						</div>
+					</div>
 				</div>
 			</section>
 
@@ -158,21 +303,28 @@ export default function Page() {
 			<section
 				id="community"
 				className="border-t border-border px-6 py-24 sm:py-32"
+				aria-labelledby="community-title"
 			>
 				<div className="mx-auto max-w-3xl text-center">
 					<span className="font-mono text-[11px] tracking-[0.3em] text-[var(--hud)]">
-						SUMATE
+						SUMATE A LA COMUNIDAD
 					</span>
-					<h2 className="mt-5 text-balance font-sans text-3xl font-semibold leading-tight tracking-tight sm:text-5xl">
+					<h2
+						id="community-title"
+						className="mt-5 text-balance font-sans text-3xl font-semibold leading-tight tracking-tight sm:text-5xl"
+					>
 						No construyas solo.
 					</h2>
-					<p className="mt-6 text-pretty font-sans leading-relaxed text-foreground/90">
+					<h3 className="mt-4 text-balance font-sans text-lg text-foreground/80">
+						Unite a la red de desarrolladores y creadores de software en Tandil.
+					</h3>
+					<p className="mt-4 text-pretty font-sans leading-relaxed text-foreground/80">
 						Registrate en nuestros eventos y seguinos en redes para enterarte de
 						cada encuentro, charla y proyecto de la comunidad en Tandil.
 					</p>
 					<div className="mt-10 flex justify-center">
 						<a
-							href="https://luma.com/hacktandil"
+							href="https://lu.ma/hacktandil"
 							target="_blank"
 							rel="noreferrer"
 							className="inline-flex items-center gap-2 border border-[var(--hud)] bg-[var(--hud)] px-7 py-3 font-mono text-xs font-semibold tracking-[0.2em] text-black transition-colors hover:bg-transparent hover:text-[var(--hud)]"
@@ -224,8 +376,47 @@ export default function Page() {
 				</div>
 			</section>
 
-			<footer className="border-t border-border px-6 py-10 font-mono text-[10px] tracking-[0.3em] text-foreground/60">
-				<div className="mx-auto flex max-w-5xl flex-col items-center gap-4 text-center">
+			{/* FOOTER DIRECTORY & TRUST LINKS */}
+			<footer className="border-t border-border px-6 py-12 font-mono text-[10px] tracking-[0.3em] text-foreground/60">
+				<div className="mx-auto flex max-w-5xl flex-col items-center gap-6 text-center">
+					<nav className="flex flex-wrap justify-center gap-6 text-[11px] text-foreground/80">
+						<Link
+							href="/about"
+							className="transition-colors hover:text-[var(--hud)]"
+						>
+							SOBRE NOSOTROS
+						</Link>
+						<Link
+							href="/contact"
+							className="transition-colors hover:text-[var(--hud)]"
+						>
+							CONTACTO
+						</Link>
+						<Link
+							href="/privacy"
+							className="transition-colors hover:text-[var(--hud)]"
+						>
+							PRIVACIDAD
+						</Link>
+						<Link
+							href="/sitemap.xml"
+							className="transition-colors hover:text-[var(--hud)]"
+						>
+							SITEMAP
+						</Link>
+						<a
+							href="/llms.txt"
+							className="transition-colors hover:text-[var(--hud)]"
+						>
+							LLMS.TXT
+						</a>
+						<a
+							href="/agents.md"
+							className="transition-colors hover:text-[var(--hud)]"
+						>
+							AGENTS.MD
+						</a>
+					</nav>
 					<div className="flex flex-col items-center gap-2 sm:flex-row sm:gap-5">
 						<span className="text-foreground/75">© 2026 HACKTANDIL</span>
 						<span className="hidden text-foreground/30 sm:inline">/</span>
