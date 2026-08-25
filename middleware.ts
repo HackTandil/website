@@ -19,7 +19,6 @@ HackTandil es el punto de encuentro de desarrolladores, investigadores, emprende
 - **Relaw** (Sponsor Legal Tech): https://relaw.io
 - **Nodo Serrano** (Hub de Innovación & Venue): https://nodoserrano.org
 - **The Red Guild** (Comunidad de Ciberseguridad): https://theredguild.org
-- **Cluster Tecnológico Tandil & CEPIT**: https://www.clustertecnologicotandil.org.ar/
 
 ## Próximos Eventos
 Consultá y registrate en nuestros eventos presenciales y virtuales:
@@ -43,32 +42,31 @@ Consultá y registrate en nuestros eventos presenciales y virtuales:
 
 	"/about": `# Sobre HackTandil // About
 
-HackTandil es la comunidad tecnológica y hub de software de Tandil, Buenos Aires, Argentina (ecosistema CEPIT / Cluster Tecnológico Tandil).
+HackTandil es la comunidad de desarrollo de software y tecnología de Tandil, Buenos Aires, Argentina.
 
-## Nuestra Misión
-Creamos la capa social para los que hacen tecnología en Tandil. Conectamos desarrolladores independientes, estudiantes de la UNICEN, investigadores y fundadores de startups para colaborar, compartir conocimiento y construir proyectos globales.
+## Manifiesto y Misión
+Creamos la capa social para los que hacen tecnología en Tandil. Conectamos desarrolladores, investigadores y constructores de software para colaborar, compartir conocimiento técnico y construir proyectos globales.
 
-## Por Qué Tandil
-Tandil se destaca en Argentina por su densidad de talento informático, impulsado por la Facultad de Ciencias Exactas de la UNICEN y más de dos décadas de desarrollo institucional a través de la CEPIT. HackTandil amplifica este ecosistema creando una comunidad abierta y activa.
+## Principios
+1. **Talento en Común**: Tandil es un semillero de talento técnico. Creamos el punto de encuentro natural para colaborar.
+2. **Visibilidad**: Damos difusión abierta a proyectos de software, herramientas y modelos desarrollados en Tandil.
+3. **Construcción Global**: Creemos en el potencial emprendedor de nuestra ciudad para construir soluciones de estándar mundial.
 
-## Iniciativas y Formatos
-- **Meetups & Demos Técnicas**: Presentaciones de código real, arquitecturas de software y modelos de IA.
-- **Hackathons & Buildathons**: Jornadas intensivas de prototipado colaborativo en 24-48hs.
-- **Plataforma Builder**: Espacio comunitario para conectar perfiles y proyectos.
-- **Vinculación con el Ecosistema**: Enlace directo con empresas del Cluster Tecnológico Tandil y la UNICEN.
+## Iniciativas
+- **Meetups & Demos Técnicas**: Charlas sobre arquitecturas, sistemas distribuidos, IA y código en producción.
+- **Hackathons & Buildathons**: Jornadas de prototipado rápido y desarrollo intensivo.
+- **Plataforma Builder (Beta)**: Espacio comunitario para conectar perfiles y proyectos locales.
 
-## Partners y Aliados
-- **Cursor Community**: Colaborador de eventos de programación con IA.
+## Colaboradores
+- **Cursor Community**: Colaborador en eventos de desarrollo asistido por IA.
 - **Relaw**: Sponsor legal tech.
-- **Nodo Serrano**: Hub y venue de innovación.
-- **The Red Guild**: Comunidad de ciberseguridad.
-- **Cluster Tecnológico Tandil & CEPIT**: Entidades del polo informático local.
+- **Nodo Serrano**: Hub y venue de encuentro para builders.
+- **The Red Guild**: Comunidad de investigación en seguridad.
 
 ## Organizadores & Contacto
 - Dante (dante@hacktandil.org)
 - Tadeo (tadeo@hacktandil.org)
 - Email General: contacto@hacktandil.org
-- Sitio: https://hacktandil.org
 `,
 
 	"/contact": `# Directorio de Contacto // Contact HackTandil

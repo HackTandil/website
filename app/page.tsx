@@ -68,10 +68,9 @@ export default function Page() {
 								POR QUÉ EXISTIMOS
 							</div>
 							<p className="mt-4 text-sm leading-relaxed text-foreground/75">
-								Tandil es reconocido en toda Argentina como un centro de
-								excelencia universitaria y empresarial en software. HackTandil
-								articula a la comunidad de desarrolladores, investigadores y
-								creadores.
+								Tandil cuenta con una gran comunidad y concentración de
+								constructores de software. HackTandil articula a los
+								desarrolladores, investigadores y creadores de tecnología.
 							</p>
 						</div>
 
@@ -88,8 +87,7 @@ export default function Page() {
 										</h3>
 										<p className="mt-2 font-sans text-base leading-relaxed text-foreground/85">
 											Tandil es un semillero de talento informático de clase
-											mundial, impulsado por la UNICEN y el ecosistema
-											empresarial. Necesitamos un espacio común y continuo de
+											mundial. Fomentamos un espacio común y continuo de
 											convergencia para ese talento.
 										</p>
 									</div>
@@ -252,7 +250,7 @@ export default function Page() {
 				</div>
 			</section>
 
-			{/* TANDIL TECH CONTEXT */}
+			{/* TANDIL BUILDER CULTURE */}
 			<section
 				id="tandil-context"
 				className="border-t border-border px-6 py-24 sm:py-32 bg-card/10"
@@ -264,7 +262,7 @@ export default function Page() {
 							id="tandil-context-title"
 							className="font-mono text-2xl font-semibold tracking-tight sm:text-4xl"
 						>
-							EL POLO TECNOLÓGICO DE TANDIL
+							CULTURA BUILDER // TANDIL
 						</h2>
 						<span className="font-mono text-[11px] tracking-[0.3em] text-foreground/55">
 							CONTEXTO // 04
@@ -273,26 +271,22 @@ export default function Page() {
 					<div className="mt-8 grid gap-8 md:grid-cols-2">
 						<div>
 							<h3 className="font-sans text-xl font-bold text-foreground">
-								El Silicon Valley de las Sierras
+								Desarrollo de Software en las Sierras
 							</h3>
 							<p className="mt-3 text-sm leading-relaxed text-foreground/80">
-								Tandil (Provincia de Buenos Aires, Argentina) se destaca a nivel
-								nacional como una de las ciudades con mayor concentración de
-								empresas y profesionales de software per cápita. Su historia se
-								construyó sobre la base de la Universidad Nacional del Centro
-								(UNICEN) y una sólida articulación público-privada.
+								Tandil cuenta con una vibrante comunidad de desarrolladores,
+								diseñadores e ingenieros de software que eligen construir
+								tecnología de alto impacto y productos digitales globales.
 							</p>
 						</div>
 						<div>
 							<h3 className="font-sans text-xl font-bold text-foreground">
-								Ecosistema CEPIT y Cluster Tandil
+								Comunidad Abierta y Descentralizada
 							</h3>
 							<p className="mt-3 text-sm leading-relaxed text-foreground/80">
-								La Cámara de Empresas del Polo Informático de Tandil (CEPIT) y
-								el Cluster Tecnológico impulsan activamente el desarrollo de la
-								industria del conocimiento. HackTandil aporta la capa
-								comunitaria y abierta donde convergen las nuevas generaciones de
-								builders.
+								HackTandil aporta el espacio neutral y comunitario donde
+								convergen las nuevas generaciones de builders para compartir
+								ideas, código y aprendizajes de forma abierta.
 							</p>
 						</div>
 					</div>

@@ -1,7 +1,7 @@
 {
   "name": "HACKTANDIL - Comunidad Tech de Tandil",
   "short_name": "HACKTANDIL",
-  "description": "Comunidad tecnológica de Tandil. Conectamos desarrolladores, emprendedores y profesionales del software en el Cluster Tecnológico Tandil (CEPIT).",
+  "description": "Comunidad tecnológica de Tandil. Conectamos desarrolladores, emprendedores y profesionales del software.",
   "icons": [
     {
       "src": "web-app-manifest-192x192.png",

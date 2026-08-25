@@ -13,7 +13,7 @@ const geistMono = Geist_Mono({
 
 const title = "HackTandil // Comunidad Tecnológica de Tandil";
 const description =
-	"HackTandil es la comunidad tecnológica de Tandil. Conectá con desarrolladores, emprendedores y profesionales del software. Eventos, hackathons, charlas y networking en el Cluster Tecnológico Tandil (ecosistema CEPIT).";
+	"HackTandil es la comunidad de desarrolladores y creadores de software de Tandil. Eventos, hackathons, charlas técnicas y networking en Tandil, Argentina.";
 
 export const metadata: Metadata = {
 	metadataBase: new URL(SITE_URL),
@@ -33,8 +33,6 @@ export const metadata: Metadata = {
 		"Tandil",
 		"Tandil tech",
 		"software Tandil",
-		"CEPIT",
-		"Cluster Tecnológico Tandil",
 		"comunidad tech",
 		"desarrolladores Tandil",
 		"programación",
